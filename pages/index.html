@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyundai Solaris — Подбор и покупка</title>
+
+    <!-- Подключаем шрифт Montserrat от Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Подключаем Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066cc',
+                        customGray: '#1a1a1a',
+                        lightGray: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    screens: {
+                        'sm': '640px',
+                        'md': '1400px',
+                        'lg': '1920px',
+                        'xl': '2100px',
+                        '2xl': '2500px'
+                    },
+                    container: {
+                        center: true,
+                        padding: '2rem',
+                        screens: {
+                            // Устанавливаем 1440px как максимальную ширину контейнера
+                            '2xl': '1440px'
+                        }
+                    },
+                    fontSize: {
+                        'mobile-h1': ['32px', { lineHeight: '40px' }],
+                        'desktop-h1': ['48px', { lineHeight: '60px' }],
+                        'xxl-h1': ['64px', { lineHeight: '80px' }]
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '160': '40rem',
+                        '192': '48rem'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .banner-section {
+            background: url('../assets/banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .banner-section {
+                background: #000000;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-black text-white">
+    <header class="w-full">
+        <!-- Верхняя строка -->
+        <div class="header-top">
+            <div class="container mx-auto flex justify-between items-center px-4 py-3">
+                <div class="flex items-center space-x-[16px]">
+                    <img src="../assets/logo.svg" alt="../assets/logo.svg">
+                    <span class="text-gray-400 text-sm">| НЕЗАВИСИМОСТЬ</span>
+                </div>
+                <div class="flex items-center space-x-6 text-sm">
+                    <div class="flex items-center text-white space-x-[5px]">
+                        <img src="../assets/place.svg" alt="">
+                        <span>г. Москва, Береговой проезд, 4/6, стр. 3</span>
+                    </div>
+                    <div class="flex items-center text-white space-x-[5px]">
+                        <img src="../assets/phone.svg" alt="">
+                        <span>+7 (499) 229-89-99</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-white space-x-[5px]">
+                        <img src="../assets/time.svg" alt="">
+                        <span>пн-вс, 9:00–21:00</span>
+                    </div>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-black px-[12px] py-[9px] rounded text-sm transition duration-200">
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-[1px]  bg-[#4c4c4c]"></div>
+
+        <!-- Вторая строка меню -->
+        <div class="header-bottom">
+            <div class="container mx-auto flex justify-between items-center px-4 py-4">
+                <div class="flex space-x-6">
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-medium">S09</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-medium">S07</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-medium">S06</a>
+                </div>
+                <nav class="flex space-x-8">
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-regular">Автомобили
+                        в наличии</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-regular">Trade-in</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-regular">Кредит</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] transition duration-200 font-regular">Спецпредложения</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Баннер -->
+        <div class="banner-section">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center h-full">
+                    <div class="w-1/2 pl-4">
+                        <h1 class="text-[32px] font-semibold text-white mb-6 leading-[40px]">
+                            Кредит от 0.01%<br>
+                            с выгодой до 400 000 ₽
+                        </h1>
+                        <button
+                            class="bg-orange-500 hover:bg-orange-600 text-black px-[128px] py-[16px] rounded-[8px] text-lg font-medium transition duration-200">
+                            Подробнее
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
+                    <div
+                        class="bg-[#111214] w-[425px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                        <div class="relative">
+                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
+                            <div
+                                class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
+                                Скидка до 860 000 ₽
+                            </div>
+                        </div>
+                        <div class="p-[24px] space-y-4">
+                            <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
+                            <p class="text-[16px] font-medium">Кроссовер</p>
+                            <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
+                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                            </p>
+                            <div class="mt-4 text-end">
+                                <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
+                                <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
+                            </div>
+                            <button
+                                class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[#111214] w-[425px] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                        <div class="relative">
+                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
+                            <div
+                                class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
+                                Скидка до 860 000 ₽
+                            </div>
+                        </div>
+                        <div class="p-[24px] space-y-4">
+                            <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
+                            <p class="text-[16px] font-medium">Кроссовер</p>
+                            <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
+                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                            </p>
+                            <div class="mt-4 text-end">
+                                <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
+                                <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
+                            </div>
+                            <button
+                                class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[#111214] w-[425px] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                        <div class="relative">
+                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
+                            <div
+                                class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
+                                Скидка до 860 000 ₽
+                            </div>
+                        </div>
+                        <div class="p-[24px] space-y-4">
+                            <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
+                            <p class="text-[16px] font-medium">Кроссовер</p>
+                            <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
+                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                            </p>
+                            <div class="mt-4 text-end">
+                                <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
+                                <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
+                            </div>
+                            <button
+                                class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="">
+                    <button
+                        class="mt-[40px] w-full text-center inline-block bg-[#111214] hover:bg-gray-800 text-orange-500 font-medium text-sm py-3 px-8 rounded-lg transition duration-200">
+                        Другие авто в наличии
+                    </button>
+                </a>
+        </section>
+
+
+        <section class="py-12 bg-black">
+
+            <div class="container mx-auto px-4">
+                <h2 class="text-[40px] font-medium text-white mb-6">Кредит от 0.01%</h2>
+                <div class="flex flex-col md:flex-row items-center gap-6 bg-[#111214] rounded-[20px]">
+                    <!-- Основной контейнер: слева форма, справа изображение -->
+                    <div class="w-full md:w-1/2  bg-[#111214] p-6">
+
+                        <!-- Шаг 1: Первоначальный взнос -->
+                        <div class="mb-8 space-y-[28px]">
+                            <p class="text-[20px] mb-[28px]">1. Введите сумму первоначального взноса</p>
+                            <input type="range" min="0" max="1000000" value="500000"
+                                class="w-full h-[23px] bg-[#343435] rounded-full appearance-none cursor-pointer slider"
+                                id="initialPaymentSlider" />
+                            <div class="flex justify-between mt-[40px] items-center">
+                                <span class="text-[16px]">Первоначальный взнос</span>
+                                <span
+                                    class="text-white text-[20px] font-medium border border-[#3c3c3e] px-[28px] py-[12px] rounded-md"
+                                    id="initialPaymentValue">500 000 ₽</span>
+                            </div>
+                        </div>
+
+                        <!-- Шаг 2: Комфортный платеж -->
+                        <div class="mb-8">
+                            <p class="text-[20px] mb-[28px]">2. Выберите комфортный платеж</p>
+                            <input type="range" min="10000" max="100000" value="80000"
+                                class="w-full h-[23px] bg-[#343435] rounded-full appearance-none cursor-pointer slider"
+                                id="monthlyPaymentSlider" />
+
+                            <div class="flex justify-between mt-[40px]">
+                                <div class="text-center">
+                                    <button
+                                        class=" text-[20px] hover:bg-gray-700 border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg transition duration-200">
+                                        8 лет
+                                    </button>
+                                    <p class="text-[16px] mt-[20px]">Срок кредита</p>
+                                </div>
+                                <div class="text-center">
+                                    <button
+                                        class=" hover:bg-gray-700 text-[20px] border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg transition duration-200">
+                                        80 000 ₽
+                                    </button>
+                                    <p class="text-[16px] mt-[20px]">Ежемесячный платеж</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Кнопка рассчитать -->
+                        <button
+                            class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg py-3 px-6 rounded-lg transition duration-200">
+                            Рассчитать
+                        </button>
+                    </div>
+
+                    <!-- Изображение -->
+                    <div class="w-full md:w-1/2 relative">
+                        <img src="../assets/carLogoSoueast.png" alt="Soueast Logo"
+                            class="w-full h-full object-cover rounded-2xl" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-black">
+            <div class="container mx-auto px-4">
+                <h2 class="text-[40px] font-medium text-white mb-8">Акции и спецпредложения</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
+                    <!-- Карточка 1 -->
+                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                        style="background-image: url('../assets/stocks/party.png'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                            <h3 class="text-[32px] font-semibold text-white mb-4">Выгода по кредиту<br>до 400 000 ₽</h3>
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                Узнать подробнее
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                        style="background-image: url('../assets/stocks/woman.jpg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                            <h3 class="text-[32px] font-semibold text-white mb-4">Льготы на покупку<br>от SOUEAST</h3>
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                Узнать подробнее
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                        style="background-image: url('../assets/stocks/car.png'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                            <h3 class="text-[32px] font-semibold text-white mb-4">Выгода на доп.<br>оборудование до 180
+                                000 ₽</h3>
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                Узнать подробнее
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 4 -->
+                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                        style="background-image: url('../assets/stocks/childs.png'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                            <h3 class="text-[32px] font-semibold text-white mb-4">SOUEAST TRADE-UP:<br>выгода до 350 000
+                                ₽</h3>
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                Узнать подробнее
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="py-12 bg-black">
+    <div class="container mx-auto px-4">
+        <h2 class="text-[40px] font-medium text-white mb-8">Обменяйте свой автомобиль на новый SOUEAST!</h2>
+
+        <div class="flex flex-col md:flex-row gap-6 items-start bg-[#111214]">
+            <!-- Левая часть: Изображение -->
+            <div class="w-full md:w-1/2 relative rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                    src="../assets/womenNearCar.png" 
+                    alt="Женщина у автомобиля SOUEAST S09" 
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <button 
+                    class="absolute bottom-6 left-6 w-[480px] bg-orange-500 hover:bg-orange-600 text-black font-medium py-3 px-6 rounded-lg transition duration-200 z-10"
+                >
+                    Получить оценку своего авто
+                </button>
+            </div>
+
+            <!-- Правая часть: Аккордеоны -->
+            <div class="w-full md:w-1/2  p-6 rounded-2xl shadow-lg">
+                <!-- Аккордеон 1: Выгода до 350 000 ₽ -->
+                <div class="border-b border-gray-700 mb-6">
+                    <button 
+                        class="flex justify-between items-center w-full text-left text-white font-medium text-lg py-4"
+                        onclick="toggleAccordion('accordion1')"
+                    >
+                        <span>Выгода до 350 000 ₽</span>
+                        <svg 
+                            class="w-6 h-6 transform rotate-180" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24" 
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="accordion1" class="text-gray-300 text-sm pb-4">
+                        <p>Обновите свой автомобиль на выгодных условиях! При покупке нового SOUEAST вы можете сэкономить до 350 000 ₽</p>
+                    </div>
+                </div>
+
+                <!-- Аккордеон 2: Почему это удобно -->
+                <div class="border-b border-gray-700 mb-6">
+                    <button 
+                        class="flex justify-between items-center w-full text-left text-white font-medium text-lg py-4"
+                        onclick="toggleAccordion('accordion2')"
+                    >
+                        <span>Почему это удобно</span>
+                        <svg 
+                            class="w-6 h-6" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24" 
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="accordion2" class="hidden text-gray-300 text-sm pb-4">
+                        <p>Процесс обмена прост и быстр. Мы берем на себя все формальности, а вы получаете новую машину без лишних хлопот.</p>
+                    </div>
+                </div>
+
+                <!-- Аккордеон 3: Как это работает -->
+                <div class="border-b border-gray-700">
+                    <button 
+                        class="flex justify-between items-center w-full text-left text-white font-medium text-lg py-4"
+                        onclick="toggleAccordion('accordion3')"
+                    >
+                        <span>Как это работает</span>
+                        <svg 
+                            class="w-6 h-6" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24" 
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="accordion3" class="hidden text-gray-300 text-sm pb-4">
+                        <p>1. Вы отправляете нам фото и данные вашего авто.<br>2. Мы оцениваем его стоимость.<br>3. Вы выбираете новый SOUEAST и оформляете сделку.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const svg = content.parentElement.querySelector('svg');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                svg.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                svg.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+
+</html>
