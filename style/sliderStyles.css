@@ -1,0 +1,96 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.loan-calculator {
+    background: #252526;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Слайдер с заполнением */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 23px;
+    background: #121315;
+    border-radius: 999px;
+    position: relative;
+    outline: none;
+    /* Переменная для заполнения */
+    --fill-percent: 0%;
+}
+
+/* Заполнение (след за ползунком) */
+.slider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: var(--fill-percent);
+    background: #13141766;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ползунок (кругляшок) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #2c2c2c;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #4886FF;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Track для WebKit (Chrome, Safari) */
+.slider::-webkit-slider-runnable-track {
+    height: 23px;
+    background: #343435;
+    border-radius: 999px;
+}
+
+/* Track для Firefox */
+.slider::-moz-range-track {
+    height: 23px;
+    background: #343435;
+    border-radius: 999px;
+}
+
+/* Кнопки и текст */
+button {
+    background: transparent;
+}
+
+button:hover {
+    background: #2d2d2d;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+    .loan-calculator {
+        padding: 20px;
+    }
+}

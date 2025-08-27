@@ -11,7 +11,7 @@
 
     <!-- Подключаем Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="../style/sliderStyles.css">
     <script>
         tailwind.config = {
             theme: {
@@ -71,13 +71,13 @@
 </head>
 
 <body class="font-sans bg-black text-white">
-    <header class="w-full">
+    <header class="w-full ">
         <!-- Верхняя строка -->
-        <div class="header-top">
+        <div class="header-top py-[20px]">
             <div class="container mx-auto flex justify-between items-center px-4 py-3">
                 <div class="flex items-center space-x-[16px]">
                     <img src="../assets/logo.svg" alt="../assets/logo.svg">
-                    <span class="text-gray-400 text-sm">| НЕЗАВИСИМОСТЬ</span>
+                    <span class="text-sm">| НЕЗАВИСИМОСТЬ</span>
                 </div>
                 <div class="flex items-center space-x-6 text-sm">
                     <div class="flex items-center text-white space-x-[5px]">
@@ -103,7 +103,7 @@
         <div class="w-full h-[1px]  bg-[#4c4c4c]"></div>
 
         <!-- Вторая строка меню -->
-        <div class="header-bottom">
+        <div class="header-bottom sticky top-0 z-50 bg-black shadow-md">
             <div class="container mx-auto flex justify-between items-center px-4 py-4">
                 <div class="flex space-x-6">
                     <a href="#"
@@ -153,31 +153,34 @@
         <section class="py-12">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
-                    <div
-                        class="bg-[#111214] w-[425px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
-                        <div class="relative">
-                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
-                            <div
-                                class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
-                                Скидка до 860 000 ₽
+                    <a href="./auto.html" class="block">
+                        <div
+                            class="bg-[#111214] w-[425px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                            <div class="relative">
+                                <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                                    class="w-full h-60 object-cover">
+                                <div
+                                    class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
+                                    Скидка до 860 000 ₽
+                                </div>
+                            </div>
+                            <div class="p-[24px] space-y-4">
+                                <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
+                                <p class="text-[16px] font-medium">Кроссовер</p>
+                                <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
+                                    1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                                </p>
+                                <div class="mt-4 text-end">
+                                    <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
+                                    <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
+                                </div>
+                                <button
+                                    class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
+                                    Подробнее
+                                </button>
                             </div>
                         </div>
-                        <div class="p-[24px] space-y-4">
-                            <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
-                            <p class="text-[16px] font-medium">Кроссовер</p>
-                            <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
-                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                            </p>
-                            <div class="mt-4 text-end">
-                                <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
-                                <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
-                            </div>
-                            <button
-                                class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
-                                Подробнее
-                            </button>
-                        </div>
-                    </div>
+                    </a>
                     <div
                         class="bg-[#111214] w-[425px] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
                         <div class="relative">
@@ -244,50 +247,47 @@
                 <h2 class="text-[40px] font-medium text-white mb-6">Кредит от 0.01%</h2>
                 <div class="flex flex-col md:flex-row items-center gap-6 bg-[#111214] rounded-[20px]">
                     <!-- Основной контейнер: слева форма, справа изображение -->
-                    <div class="w-full md:w-1/2  bg-[#111214] p-6">
+                    <div class="w-full md:w-1/2   bg-[#121315] p-6">
 
-                        <!-- Шаг 1: Первоначальный взнос -->
-                        <div class="mb-8 space-y-[28px]">
-                            <p class="text-[20px] mb-[28px]">1. Введите сумму первоначального взноса</p>
-                            <input type="range" min="0" max="1000000" value="500000"
-                                class="w-full h-[23px] bg-[#343435] rounded-full appearance-none cursor-pointer slider"
-                                id="initialPaymentSlider" />
-                            <div class="flex justify-between mt-[40px] items-center">
-                                <span class="text-[16px]">Первоначальный взнос</span>
-                                <span
-                                    class="text-white text-[20px] font-medium border border-[#3c3c3e] px-[28px] py-[12px] rounded-md"
-                                    id="initialPaymentValue">500 000 ₽</span>
+                        <div class="space-y-6 ">
+                            <p class="text-[20px] font-medium">1. Введите сумму первоначального взноса</p>
+                            <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="50000"
+                                value="500000" class="w-full h-[23px] slider" />
+                            <div class="flex justify-between mt-10 items-center">
+                                <span class="text-[16px] text-gray-400">Первоначальный взнос</span>
+                                <span id="initialPaymentValue"
+                                    class="text-white text-[20px] font-medium border border-[#3c3c3e] px-[28px] py-[12px] rounded-md">
+                                    500 000 ₽
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Шаг 2: Комфортный платеж -->
-                        <div class="mb-8">
-                            <p class="text-[20px] mb-[28px]">2. Выберите комфортный платеж</p>
-                            <input type="range" min="10000" max="100000" value="80000"
-                                class="w-full h-[23px] bg-[#343435] rounded-full appearance-none cursor-pointer slider"
-                                id="monthlyPaymentSlider" />
-
-                            <div class="flex justify-between mt-[40px]">
+                        <!-- Шаг 2: Срок кредита -->
+                        <div class="space-y-6">
+                            <p class="text-[20px] font-medium">2. Выберите срок кредита</p>
+                            <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
+                                class="w-full h-[23px] slider" />
+                            <div class="flex justify-between mt-10">
                                 <div class="text-center">
-                                    <button
-                                        class=" text-[20px] hover:bg-gray-700 border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg transition duration-200">
+                                    <button id="loanTermValue"
+                                        class="text-[20px] border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg hover:bg-gray-700 transition">
                                         8 лет
                                     </button>
-                                    <p class="text-[16px] mt-[20px]">Срок кредита</p>
+                                    <p class="text-[16px] mt-[20px] text-gray-400">Срок кредита</p>
                                 </div>
                                 <div class="text-center">
-                                    <button
-                                        class=" hover:bg-gray-700 text-[20px] border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg transition duration-200">
+                                    <button id="monthlyPaymentValue"
+                                        class="text-[20px] border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg hover:bg-gray-700 transition">
                                         80 000 ₽
                                     </button>
-                                    <p class="text-[16px] mt-[20px]">Ежемесячный платеж</p>
+                                    <p class="text-[16px] mt-[20px] text-gray-400">Ежемесячный платёж</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Кнопка рассчитать -->
                         <button
-                            class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg py-3 px-6 rounded-lg transition duration-200">
+                            class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium mt-[40px] text-lg py-3 px-6 rounded-lg transition duration-200">
                             Рассчитать
                         </button>
                     </div>
@@ -364,7 +364,7 @@
 
         <section class="py-12 bg-black">
             <div class="container mx-auto px-4">
-                <h2 class="text-[40px] font-medium text-white mb-8 text-center">Обменяйте свой автомобиль на новый
+                <h2 class="text-[40px] font-medium text-white mb-8">Обменяйте свой автомобиль на новый
                     SOUEAST!</h2>
 
                 <div
@@ -629,29 +629,11 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Разделительная линия -->
             <div class="border-t border-gray-700 mt-8"></div>
         </div>
     </footer>
-
-
-    <script>
-        function toggleAccordion(id) {
-            const content = document.getElementById(id);
-            const icon = document.querySelector(`[onclick="toggleAccordion('${id}')"] svg`);
-
-            if (content.classList.contains('max-h-0')) {
-                content.classList.remove('max-h-0', 'opacity-0');
-                content.classList.add('max-h-40', 'opacity-100');
-                icon.classList.add('rotate-180');
-            } else {
-                content.classList.remove('max-h-40', 'opacity-100');
-                content.classList.add('max-h-0', 'opacity-0');
-                icon.classList.remove('rotate-180');
-            }
-        }
-    </script>
+    <script src="../script/components/slider/CreditSlider.js"></script>
+    <script src="../script/components/Toggle/toggleList.js"></script>
 </body>
 
 </html>
