@@ -126,7 +126,7 @@
         </div>
 
         <!-- Баннер для десктопа -->
-        <div class="banner-section md:block hidden">
+        <div class="banner-section md:block hidden h-[708px] bg-bottom">
             <div class="container mx-auto h-full">
                 <div class="flex items-center h-full">
                     <div class="w-1/2 pl-4">
@@ -199,109 +199,132 @@
 
 
     <main>
-<section class="py-12">
-    <div class="container mx-auto px-4 flex flex-col items-center">
+        <section class="py-12">
+            <div class="container mx-auto px-4 flex flex-col items-center">
 
-        <div class="flex justify-between space-x-4  mb-6 md:hidden block">
-    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S09</button>
-    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S07</button>
-    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S06</button>
-</div>
-        <!-- Сетка карточек -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[64px] w-full max-w-[1440px] mx-auto">
-            <!-- Карточка 1 -->
-            <a href="./auto.html" class="block">
-                <div class="bg-[#111214] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
-                    <div class="relative">
-                        <!-- Изображение: меньше на mobile -->
-                        <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
-                             class="w-full h-44 sm:h-52 md:h-60 object-cover">
-                        <!-- Скидка: меньше на mobile -->
-                        <div class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
-                            Скидка до 860 000 ₽
+                <div class="flex justify-between space-x-4  mb-6 md:hidden block">
+                    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S09</button>
+                    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S07</button>
+                    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S06</button>
+                </div>
+                <!-- Сетка карточек -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[64px] w-full max-w-[1440px] mx-auto">
+                    <!-- Карточка 1 -->
+                    <a href="./auto.html" class="block">
+                        <div
+                            class="bg-[#111214] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
+                            <div class="relative">
+                                <!-- Изображение: меньше на mobile -->
+                                <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                                    class="w-full h-44 sm:h-52 md:h-60 object-cover">
+                                <!-- Скидка: меньше на mobile -->
+                                <div
+                                    class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
+                                    Скидка до 860 000 ₽
+                                </div>
+                            </div>
+                            <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
+                                <!-- Заголовок -->
+                                <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07
+                                    Premium 4WD</h3>
+                                <!-- Тип -->
+                                <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер
+                                </p>
+                                <!-- Характеристики -->
+                                <p
+                                    class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
+                                    1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                                </p>
+                                <!-- Цена -->
+                                <div class="mt-3 sm:mt-4 text-end">
+                                    <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809
+                                        000 ₽</p>
+                                    <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333
+                                        ₽/мес</p>
+                                </div>
+                                <!-- Кнопка -->
+                                <button
+                                    class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Карточка 2 -->
+                    <div
+                        class="bg-[#111214] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
+                        <div class="relative">
+                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                                class="w-full h-44 sm:h-52 md:h-60 object-cover">
+                            <div
+                                class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
+                                Скидка до 860 000 ₽
+                            </div>
+                        </div>
+                        <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
+                            <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium
+                                4WD</h3>
+                            <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
+                            <p
+                                class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
+                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                            </p>
+                            <div class="mt-3 sm:mt-4 text-end">
+                                <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽
+                                </p>
+                                <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес
+                                </p>
+                            </div>
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
+                                Подробнее
+                            </button>
                         </div>
                     </div>
-                    <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
-                        <!-- Заголовок -->
-                        <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium 4WD</h3>
-                        <!-- Тип -->
-                        <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
-                        <!-- Характеристики -->
-                        <p class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
-                            1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                        </p>
-                        <!-- Цена -->
-                        <div class="mt-3 sm:mt-4 text-end">
-                            <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽</p>
-                            <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес</p>
+
+                    <!-- Карточка 3 -->
+                    <div
+                        class="bg-[#111214] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
+                        <div class="relative">
+                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                                class="w-full h-44 sm:h-52 md:h-60 object-cover">
+                            <div
+                                class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
+                                Скидка до 860 000 ₽
+                            </div>
                         </div>
-                        <!-- Кнопка -->
-                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
-                            Подробнее
-                        </button>
+                        <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
+                            <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium
+                                4WD</h3>
+                            <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
+                            <p
+                                class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
+                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                            </p>
+                            <div class="mt-3 sm:mt-4 text-end">
+                                <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽
+                                </p>
+                                <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес
+                                </p>
+                            </div>
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
+                                Подробнее
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </a>
 
-            <!-- Карточка 2 -->
-            <div class="bg-[#111214] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
-                <div class="relative">
-                    <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
-                         class="w-full h-44 sm:h-52 md:h-60 object-cover">
-                    <div class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
-                        Скидка до 860 000 ₽
-                    </div>
-                </div>
-                <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
-                    <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium 4WD</h3>
-                    <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
-                    <p class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
-                        1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                    </p>
-                    <div class="mt-3 sm:mt-4 text-end">
-                        <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽</p>
-                        <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес</p>
-                    </div>
-                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
-                        Подробнее
+                <!-- Кнопка -->
+                <a href="#" class="mt-6 sm:mt-8 md:mt-[40px] w-full max-w-xs sm:max-w-md md:max-w-none">
+                    <button
+                        class="w-full bg-[#111214] hover:bg-gray-800 text-orange-500 font-medium text-sm sm:text-base md:text-sm py-2.5 sm:py-3 md:py-[16px] px-6 sm:px-7 md:px-8 rounded-lg transition duration-200 text-center">
+                        Другие авто в наличии
                     </button>
-                </div>
+                </a>
             </div>
-
-            <!-- Карточка 3 -->
-            <div class="bg-[#111214] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
-                <div class="relative">
-                    <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
-                         class="w-full h-44 sm:h-52 md:h-60 object-cover">
-                    <div class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
-                        Скидка до 860 000 ₽
-                    </div>
-                </div>
-                <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
-                    <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium 4WD</h3>
-                    <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
-                    <p class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
-                        1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                    </p>
-                    <div class="mt-3 sm:mt-4 text-end">
-                        <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽</p>
-                        <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес</p>
-                    </div>
-                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
-                        Подробнее
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Кнопка -->
-        <a href="#" class="mt-6 sm:mt-8 md:mt-[40px] w-full max-w-xs sm:max-w-md md:max-w-none">
-            <button class="w-full bg-[#111214] hover:bg-gray-800 text-orange-500 font-medium text-sm sm:text-base md:text-sm py-2.5 sm:py-3 md:py-[16px] px-6 sm:px-7 md:px-8 rounded-lg transition duration-200 text-center">
-                Другие авто в наличии
-            </button>
-        </a>
-    </div>
-</section>
+        </section>
 
         <section class="py-12 bg-black ">
             <div class="container w-[355px] md:w-full mx-auto px-4">
@@ -449,7 +472,6 @@
                         <img src="../assets/womenNearCar.png" alt="Женщина у автомобиля SOUEAST S09"
                             class="w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-                        <!-- Кнопка по центру на мобильных -->
                         <button
                             class="absolute bottom-6 left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0 text-[14px] md:text-[16px] w-[90%] md:w-[480px] max-w-[480px] bg-orange-500 hover:bg-orange-600 text-black font-medium py-3 rounded-lg transition duration-200 z-10 hover:scale-105">
                             Получить оценку своего авто
@@ -464,14 +486,14 @@
                                 class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
                                 onclick="toggleAccordion('accordion1')">
                                 <span>Выгода до 350 000 ₽</span>
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" id="icon1"
+                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 rotate-180"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                             <div id="accordion1"
-                                class="text-gray-300 text-sm overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                                class="text-gray-300 text-sm overflow-hidden transition-all duration-300 ease-in-out max-h-40 opacity-100">
                                 <p class="pt-2">Обновите свой автомобиль на выгодных условиях! При покупке нового
                                     SOUEAST вы можете сэкономить до 350 000 ₽</p>
                             </div>
@@ -483,14 +505,14 @@
                                 class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
                                 onclick="toggleAccordion('accordion2')">
                                 <span>Почему это удобно</span>
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" id="icon2"
+                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 rotate-180"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                             <div id="accordion2"
-                                class="text-gray-300 text-sm overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                                class="text-gray-300 text-sm overflow-hidden transition-all duration-300 ease-in-out max-h-40 opacity-100">
                                 <p class="pt-2">Процесс обмена прост и быстр. Мы берем на себя все формальности, а вы
                                     получаете новую машину без лишних хлопот.</p>
                             </div>
@@ -502,14 +524,14 @@
                                 class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
                                 onclick="toggleAccordion('accordion3')">
                                 <span>Как это работает</span>
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" id="icon3"
+                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 rotate-180"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                             <div id="accordion3"
-                                class="text-gray-300 text-sm overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                                class="text-gray-300 text-sm overflow-hidden transition-all duration-300 ease-in-out max-h-40 opacity-100">
                                 <p class="pt-2">1. Вы отправляете нам фото и данные своего авто.<br>2. Мы оцениваем его
                                     стоимость.<br>3. Вы выбираете новый SOUEAST и оформляете сделку.</p>
                             </div>
@@ -783,7 +805,7 @@
 
         </div>
 
-        <script>
+        <!-- <script>
             function toggleMenu(id) {
                 const content = document.getElementById(id + '-content');
                 const arrow = document.getElementById(id + '-arrow');
@@ -795,7 +817,7 @@
                     arrow.style.transform = 'rotate(0deg)';
                 }
             }
-        </script>
+        </script> -->
     </footer>
     <script src="../script/components/slider/CreditSlider.js"></script>
     <script src="../script/components/Toggle/toggleList.js"></script>

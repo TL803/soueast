@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyundai Solaris — Подбор и покупка</title>
+
+    <!-- Подключаем шрифт Montserrat от Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Подключаем Tailwind CSS через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/sliderStyles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066cc',
+                        customGray: '#1a1a1a',
+                        lightGray: '#333333',
+                        'orange-accent': '#FE7600',
+                        'orange-accent-light': '#FE7600CC',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    screens: {
+                        'sm': '640px',
+                        'md': '1400px',
+                        'lg': '1920px',
+                        'xl': '2100px',
+                        '2xl': '2500px'
+                    },
+                    container: {
+                        center: true,
+                        padding: '1rem',
+                        screens: {
+                            '2xl': '1440px'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-sans">
+    <header class="w-full">
+        <!-- Верхняя строка (только десктоп) -->
+        <div class="header-top py-[20px] md:flex hidden">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <div class="flex items-center space-x-[16px]">
+                    <img src="../assets/logo.svg" alt="Логотип">
+                    <span class="text-sm text-white">| НЕЗАВИСИМОСТЬ</span>
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-white">
+                    <div class="flex items-center space-x-[5px]">
+                        <img src="../assets/place.svg" alt="Местоположение" class="h-4">
+                        <span>г. Москва, Береговой проезд, 4/6, стр. 3</span>
+                    </div>
+                    <div class="flex items-center space-x-[5px]">
+                        <img src="../assets/phone.svg" alt="Телефон" class="h-4">
+                        <span>+7 (499) 229-89-99</span>
+                    </div>
+                    <div class="flex items-center space-x-[5px]">
+                        <img src="../assets/time.svg" alt="Время работы" class="h-4">
+                        <span>пн-вс, 9:00–21:00</span>
+                    </div>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-black px-[12px] py-[6px] rounded text-sm transition duration-200">
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Разделительная линия (десктоп) -->
+        <div class="w-full h-[1px] bg-[#4c4c4c] md:block hidden"></div>
+
+        <!-- Нижняя строка меню (десктоп) -->
+        <div class="header-bottom sticky top-0 z-50 bg-black md:flex hidden">
+            <div class="container mx-auto flex justify-between items-center px-4 py-4">
+                <div class="flex space-x-6">
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S09</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S07</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S06</a>
+                </div>
+                <nav class="flex space-x-8">
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Автомобили
+                        в наличии</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Trade-in</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Кредит</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Спецпредложения</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Мобильный хедер (только на мобильных) -->
+        <div class="md:hidden flex justify-between items-center p-4 bg-black text-white">
+            <img src="../assets/logo.svg" alt="Логотип" class="h-6">
+            <div class="flex items-center space-x-4">
+                <a href="tel:+74992298999" class="text-orange-500 hover:text-orange-400 transition">
+                    <img src="../assets/phone.svg" alt="Телефон" class="w-6 h-6">
+                </a>
+                <button id="menuToggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div id="mobileMenu" class="md:hidden bg-black text-white p-4 hidden">
+            <div class="flex flex-col space-y-4 text-lg">
+                <a href="#" class="hover:text-orange-500 transition">S09</a>
+                <a href="#" class="hover:text-orange-500 transition">S07</a>
+                <a href="#" class="hover:text-orange-500 transition">S06</a>
+                <a href="#" class="hover:text-orange-500 transition">Автомобили в наличии</a>
+                <a href="#" class="hover:text-orange-500 transition">Trade-in</a>
+                <a href="#" class="hover:text-orange-500 transition">Кредит</a>
+                <a href="#" class="hover:text-orange-500 transition">Спецпредложения</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section> 
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+                <h2 class="text-[48px] font-medium mt-[35px] mb-[52px]">Автомобили в наличии</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 justify-items-center"
+                    id="cars-container">
+                    <!-- Карточки будут добавлены через JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript для открытия/закрытия мобильного меню -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    <script src="../script/components/iterations/carIteration.js"></script>
+</body>
+
+</html>
