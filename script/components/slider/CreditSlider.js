@@ -1,21 +1,29 @@
 // Фиксированные значения: срок → платёж
 const PAYMENT_TABLE = {
     8: { term: "8 лет", payment: 50000 },
-    7: { term: "7 лет", payment: 55000 },
-    6: { term: "6 лет", payment: 60000 },
-    5: { term: "5 лет", payment: 70000 },
-    4: { term: "4 года", payment: 80000 },
-    3: { term: "3 года", payment: 90000 },
-    2: { term: "2 года", payment: 100000 },
-    1: { term: "1 год",  payment: 110000 }
+    7: { term: "7 лет", payment: 60000 },
+    6: { term: "6 лет", payment: 70000 },
+    5: { term: "5 лет", payment: 80000 },
+    4: { term: "4 года", payment: 90000 },
+    3: { term: "3 года", payment: 100000 },
+    2: { term: "2 года", payment: 110000 },
+    1: { term: "1 год",  payment: 120000 }
 };
+
+// Функция расчёта процентной ставки (чем меньше срок — тем выше)
+function calculateInterestRate(years) {
+    const maxRate = 15.0;
+    const minRate = 7.0;
+    const rate = maxRate - (years - 1) * ((maxRate - minRate) / 7);
+    return Math.max(parseFloat(rate.toFixed(1)), minRate);
+}
 
 // Форматирование числа: 50000 → "50 000 ₽"
 function formatNumber(num) {
     return num.toLocaleString('ru-RU') + ' ₽';
 }
 
-// Обновление заполнения слайдера
+// Обновление прогресса слайдера
 function updateSliderFill(slider) {
     const min = parseFloat(slider.min);
     const max = parseFloat(slider.max);
@@ -26,26 +34,36 @@ function updateSliderFill(slider) {
 
 // Элементы
 const initialSlider = document.getElementById('initialPaymentSlider');
-const initialValue = document.getElementById('initialPaymentValue');
+const initialPaymentValue = document.getElementById('initialPaymentValue');
+const initialPercentValue = document.getElementById('initialPercentValue');
 
 const loanTermSlider = document.getElementById('loanTermSlider');
 const loanTermValue = document.getElementById('loanTermValue');
 const monthlyPaymentValue = document.getElementById('monthlyPaymentValue');
+const interestRate = document.getElementById('interestRate');
 
 // Обновление всех значений
 function updateValues() {
-    // Обновляем первоначальный взнос
+    // --- Первоначальный взнос ---
     const initial = parseInt(initialSlider.value);
-    initialValue.textContent = formatNumber(initial);
+    const percent = initial === 0 ? "0%" : `${(initial / 1000000) * 100}%`;
+    initialPaymentValue.textContent = formatNumber(initial);
+    initialPercentValue.textContent = percent;
 
-    // Обновляем срок и платёж
+    // --- Срок и платёж ---
     const years = parseInt(loanTermSlider.value);
     const data = PAYMENT_TABLE[years] || PAYMENT_TABLE[8];
 
     loanTermValue.textContent = data.term;
     monthlyPaymentValue.textContent = formatNumber(data.payment);
 
-    // Обновляем заполнение слайдеров
+    // --- Процентная ставка (только если элемент существует) ---
+    if (interestRate) {
+        const rate = calculateInterestRate(years);
+        interestRate.textContent = rate + '%';
+    }
+
+    // --- Обновление прогресса слайдеров ---
     updateSliderFill(initialSlider);
     updateSliderFill(loanTermSlider);
 }
