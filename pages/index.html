@@ -35,7 +35,6 @@
                         center: true,
                         padding: '2rem',
                         screens: {
-                            // Устанавливаем 1440px как максимальную ширину контейнера
                             '2xl': '1440px'
                         }
                     },
@@ -72,7 +71,6 @@
 
 <body class="font-sans bg-black text-white">
     <header class="w-full">
-        <!-- Верхняя строка (для десктопа) -->
         <div class="header-top py-[20px] md:flex hidden">
             <div class="container mx-auto flex justify-between items-center px-4 py-3">
                 <div class="flex items-center space-x-[16px]">
@@ -90,7 +88,7 @@
                     </div>
                     <div class="flex items-center space-x-2 text-white space-x-[5px]">
                         <img src="../assets/time.svg" alt="Time" class="w-4 h-4">
-                        <span>пн-вс, 9:00–21:00</span>
+                        <span>пн-вс, 9:00–20:00</span>
                     </div>
                     <button
                         class="bg-orange-500 hover:bg-orange-600 text-black px-[12px] py-[9px] rounded text-sm transition duration-200">
@@ -201,173 +199,178 @@
 
 
     <main>
-        <section class="py-12">
-            <div class="container mx-auto px-4  justify-between flex flex-col items-center">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-[64px]">
-                    <a href="./auto.html" class="block">
-                        <div
-                            class="bg-[#111214] w-[335px] md:w-[425px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
-                            <div class="relative">
-                                <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
-                                    class="w-full h-60 object-cover">
-                                <div
-                                    class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
-                                    Скидка до 860 000 ₽
-                                </div>
-                            </div>
-                            <div class="p-[24px] space-y-4">
-                                <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
-                                <p class="text-[16px] font-medium">Кроссовер</p>
-                                <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
-                                    1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                                </p>
-                                <div class="mt-4 text-end">
-                                    <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
-                                    <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
-                                </div>
-                                <button
-                                    class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
-                                    Подробнее
-                                </button>
-                            </div>
-                        </div>
-                    </a>
-                    <div
-                        class="bg-[#111214] w-[335px] md:w-[425px]  rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
-                        <div class="relative">
-                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
-                            <div
-                                class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
-                                Скидка до 860 000 ₽
-                            </div>
-                        </div>
-                        <div class="p-[24px] space-y-4">
-                            <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
-                            <p class="text-[16px] font-medium">Кроссовер</p>
-                            <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
-                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                            </p>
-                            <div class="mt-4 text-end">
-                                <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
-                                <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
-                            </div>
-                            <button
-                                class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
-                                Подробнее
-                            </button>
+<section class="py-12">
+    <div class="container mx-auto px-4 flex flex-col items-center">
+
+        <div class="flex justify-between space-x-4  mb-6 md:hidden block">
+    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S09</button>
+    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S07</button>
+    <button class="w-[102px] h-[34px] rounded-[8px] bg-[#2F2F2F]">S06</button>
+</div>
+        <!-- Сетка карточек -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[64px] w-full max-w-[1440px] mx-auto">
+            <!-- Карточка 1 -->
+            <a href="./auto.html" class="block">
+                <div class="bg-[#111214] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
+                    <div class="relative">
+                        <!-- Изображение: меньше на mobile -->
+                        <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                             class="w-full h-44 sm:h-52 md:h-60 object-cover">
+                        <!-- Скидка: меньше на mobile -->
+                        <div class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
+                            Скидка до 860 000 ₽
                         </div>
                     </div>
-                    <div
-                        class="bg-[#111214] w-[335px] md:w-[425px]  rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
-                        <div class="relative">
-                            <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
-                            <div
-                                class="absolute top-0 left-[32px] bg-[#F2892E80] text-white text-[14px] font-medium px-3 py-1 rounded-t-none rounded-b-[8px]">
-                                Скидка до 860 000 ₽
-                            </div>
+                    <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
+                        <!-- Заголовок -->
+                        <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium 4WD</h3>
+                        <!-- Тип -->
+                        <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
+                        <!-- Характеристики -->
+                        <p class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
+                            1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                        </p>
+                        <!-- Цена -->
+                        <div class="mt-3 sm:mt-4 text-end">
+                            <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽</p>
+                            <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес</p>
                         </div>
-                        <div class="p-[24px] space-y-4">
-                            <h3 class="text-[24px] font-semiBold text-white">S07 Premium 4WD</h3>
-                            <p class="text-[16px] font-medium">Кроссовер</p>
-                            <p class="text-[#FFFFFF99] text-[16px] leading-[20px]">
-                                1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
-                            </p>
-                            <div class="mt-4 text-end">
-                                <p class="text-[36px] font-medium text-white">2 809 000 ₽</p>
-                                <p class="text-white font-medium text-[16px]">В кредит от 3 333₽/мес</p>
-                            </div>
-                            <button
-                                class="w-full bg-orange-500 text-[20px] font-medium hover:bg-orange-600 text-black font-medium py-3 px-4 rounded-lg transition duration-200">
-                                Подробнее
-                            </button>
-                        </div>
+                        <!-- Кнопка -->
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
+                            Подробнее
+                        </button>
                     </div>
                 </div>
-                <a href="#" class="">
-                    <button
-                        class="mt-[40px] w-full text-center inline-block bg-[#111214] hover:bg-gray-800 text-orange-500 font-medium text-sm py-[16px] px-8 rounded-lg transition duration-200">
-                        Другие авто в наличии
-                    </button>
-                </a>
-        </section>
+            </a>
 
-
-<section class="py-12 bg-black">
-    <div class="container w-[355px] md:w-full mx-auto px-4">
-        <!-- Заголовок -->
-        <h2 class="text-[28px] sm:text-[32px] font-medium text-white mb-6">Кредит от 0.01%</h2>
-
-        <!-- Карточка калькулятора -->
-        <div class="relative bg-[#111214] rounded-[20px] overflow-hidden shadow-xl md:flex md:flex-row md:items-center">
-
-            <!-- Форма -->
-            <div class="w-full md:w-1/2 p-4 md:p-6 relative z-10 bg-[#121315] md:bg-transparent">
-                <div class="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
-                     style="background-image: url('../assets/carLogoSoueast.png');"></div>
-                <div class="absolute inset-0 bg-black opacity-40 md:hidden"></div>
-
-                <div class="relative space-y-5">
-
-                    <div class="space-y-3">
-                        <p class="text-[16px] font-medium text-white">1. Введите сумму первоначального взноса</p>
-                        <div class="relative h-6 flex items-center">
-                            <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="100000" value="500000"
-                                   class="w-full slider" />
-                        </div>
-                        <div class="flex justify-between mt-2">
-                            <span id="initialPercentValue"
-                                  class="text-[16px] border border-[#3c3c3e] text-white font-medium px-3 py-1 rounded-lg hover:bg-gray-700 transition">
-                                50%
-                            </span>
-                            <span class="text-[10px] md:text-[16px] text-gray-400">Первоначальный <br class="md:hidden block"> взнос</span>
-                            <span id="initialPaymentValue"
-                                  class="text-white text-[16px] font-medium border border-[#3c3c3e] px-3 py-1 rounded-md">
-                                500 000 ₽
-                            </span>
-                        </div>
+            <!-- Карточка 2 -->
+            <div class="bg-[#111214] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
+                <div class="relative">
+                    <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                         class="w-full h-44 sm:h-52 md:h-60 object-cover">
+                    <div class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
+                        Скидка до 860 000 ₽
                     </div>
-
-                    <div class="space-y-3">
-                        <p class="text-[16px] font-medium text-white">2. Выберите срок кредита</p>
-                        <div class="relative h-6 flex items-center">
-                            <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
-                                   class="w-full slider" />
-                        </div>
-                        <div class="flex justify-between mt-2">
-                            <div class="text-center">
-                                <button id="loanTermValue"
-                                        class="text-[16px] border border-[#3c3c3e] text-white font-medium px-3 py-1 rounded-lg hover:bg-gray-700 transition">
-                                    8 лет
-                                </button>
-                                <p class="text-[10px] md:text-[16px] text-gray-400 mt-1">Срок кредита</p>
-                            </div>
-                            <div class="text-center">
-                                <button id="monthlyPaymentValue"
-                                        class="text-[16px] border border-[#3c3c3e] text-white font-medium px-3 py-1 rounded-lg hover:bg-gray-700 transition">
-                                    80 000 ₽
-                                </button>
-                                <p class="text-[10px] md:text-[16px] text-gray-400 mt-1">Ежемесячный платёж</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
+                    <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium 4WD</h3>
+                    <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
+                    <p class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
+                        1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                    </p>
+                    <div class="mt-3 sm:mt-4 text-end">
+                        <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽</p>
+                        <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес</p>
                     </div>
-
-                    <!-- Кнопка -->
-                    <button
-                        class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg py-3 px-6 rounded-lg transition duration-200 mt-4">
-                        Рассчитать
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
+                        Подробнее
                     </button>
                 </div>
             </div>
 
-            <!-- Изображение — только на десктопе -->
-            <div class="hidden md:block w-full md:w-1/2 relative">
-                <img src="../assets/carLogoSoueast.png" alt="Soueast Logo"
-                     class="w-full h-full object-cover rounded-r-[20px] min-h-[400px]" />
+            <!-- Карточка 3 -->
+            <div class="bg-[#111214] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 max-w-xs sm:max-w-md md:max-w-none mx-auto md:mx-0">
+                <div class="relative">
+                    <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
+                         class="w-full h-44 sm:h-52 md:h-60 object-cover">
+                    <div class="absolute top-0 left-4 sm:left-[32px] bg-[#F2892E80] text-white text-[12px] sm:text-[14px] font-medium px-2 sm:px-3 py-1 rounded-b-[8px]">
+                        Скидка до 860 000 ₽
+                    </div>
+                </div>
+                <div class="p-4 sm:p-5 md:p-[24px] space-y-3 sm:space-y-4">
+                    <h3 class="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-white">S07 Premium 4WD</h3>
+                    <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white">Кроссовер</p>
+                    <p class="text-[#FFFFFF99] text-[12px] sm:text-[14px] md:text-[16px] leading-[16px] sm:leading-[18px] md:leading-[20px]">
+                        1.6л (186 л.с.), АКПП - 8, бензин, Полный (4WD)
+                    </p>
+                    <div class="mt-3 sm:mt-4 text-end">
+                        <p class="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-white">2 809 000 ₽</p>
+                        <p class="text-white text-[12px] sm:text-[14px] md:text-[16px]">В кредит от 3 333 ₽/мес</p>
+                    </div>
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-black text-[16px] sm:text-[18px] md:text-[20px] font-medium py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg transition duration-200">
+                        Подробнее
+                    </button>
+                </div>
             </div>
         </div>
+
+        <!-- Кнопка -->
+        <a href="#" class="mt-6 sm:mt-8 md:mt-[40px] w-full max-w-xs sm:max-w-md md:max-w-none">
+            <button class="w-full bg-[#111214] hover:bg-gray-800 text-orange-500 font-medium text-sm sm:text-base md:text-sm py-2.5 sm:py-3 md:py-[16px] px-6 sm:px-7 md:px-8 rounded-lg transition duration-200 text-center">
+                Другие авто в наличии
+            </button>
+        </a>
     </div>
 </section>
 
+        <section class="py-12 bg-black">
+            <div class="container w-[355px] md:w-full mx-auto px-4">
+                <h2 class="md:text-[40px] font-medium text-white mb-8 text-center md:text-start">Кредит от 0.01%</h2>
+
+                <div
+                    class="relative bg-[#111214] rounded-[20px] overflow-hidden shadow-xl md:flex md:flex-row md:items-center">
+
+                    <!-- Форма -->
+                    <div class="w-full md:w-1/2 p-4 md:p-6 relative z-10 bg-[#121315] md:bg-transparent">
+                        <!-- Фон на мобильных -->
+                        <div class="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
+                            style="background-image: url('../assets/carLogoSoueast.png');"></div>
+                        <div class="absolute inset-0 bg-black opacity-40 md:hidden"></div>
+
+                        <!-- Контент формы -->
+                        <div class="relative space-y-5">
+
+                            <!-- Шаг 1: Процент взноса -->
+                            <div class="space-y-3">
+                                <p class="text-[16px] font-medium text-white">1. Введите сумму первоначального взноса
+                                </p>
+                                <div class="relative h-6 flex items-center">
+                                    <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="100000"
+                                        value="500000" class="w-full slider" />
+                                </div>
+                                <div class="mt-2 text-center">
+                                    <!-- Процент взноса -->
+                                    <span id="initialPercentValue"
+                                        class="block text-center text-[18px] sm:text-[20px] font-medium text-white bg-[#1e1e1e] border border-[#3c3c3e] py-3 rounded-lg">
+                                        50%
+                                    </span>
+                                    <p class="text-[12px] sm:text-[14px] text-gray-400 mt-1">Первоначальный взнос</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 2: Срок кредита -->
+                            <div class="space-y-3">
+                                <p class="text-[16px] font-medium text-white">2. Выберите срок кредита</p>
+                                <div class="relative h-6 flex items-center">
+                                    <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
+                                        class="w-full slider" />
+                                </div>
+                                <div class="mt-2 text-center">
+                                    <!-- Срок кредита -->
+                                    <button id="loanTermValue"
+                                        class="block w-full text-center text-[18px] sm:text-[20px] font-medium text-white bg-[#1e1e1e] border border-[#3c3c3e] py-3 rounded-lg ">
+                                        8 лет
+                                    </button>
+                                    <p class="text-[12px] sm:text-[14px] text-gray-400 mt-1">Срок кредита</p>
+                                </div>
+                            </div>
+
+                            <!-- Кнопка -->
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg py-3 px-6 rounded-lg transition duration-200 mt-4">
+                                Рассчитать
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Изображение — только на десктопе -->
+                    <div class="hidden md:block w-full md:w-1/2 relative">
+                        <img src="../assets/carLogoSoueast.png" alt="Soueast Logo"
+                            class="w-full h-full object-cover rounded-r-[20px] min-h-[400px]" />
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="py-12 bg-black">
             <div class="container flex flex-col items-center md:block mx-auto px-4">
                 <h2 class=" md:text-[40px] font-medium text-white mb-8">Акции и спецпредложения</h2>
@@ -378,7 +381,7 @@
                         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
                             <h3 class="text-[16px] md:text-[32px] font-semibold text-white mb-4">Выгода по кредиту<br>до
-                                400 000 ₽</h3>
+                                500 000 ₽</h3>
                             <button
                                 class="w-full bg-orange-500 hover:bg-orange-600 text-[14px] md:text-[20px] text-black font-medium py-2 md:py-3 md:px-6 rounded-lg transition duration-200">
                                 Узнать подробнее
@@ -744,40 +747,8 @@
                     </div>
                 </div>
 
-                <!-- Политика и контакты -->
-                <div class="mt-6 space-y-2">
-                    <a href="#" class="block text-gray-400 hover:text-white transition duration-200">Политика
-                        конфиденциальности</a>
-                    <a href="#" class="block text-gray-400 hover:text-white transition duration-200">Cookies</a>
-                    <a href="#" class="block text-gray-400 hover:text-white transition duration-200">Контакты</a>
-                </div>
-
-                <!-- Соцсети -->
-                <div class="flex space-x-6 mt-6">
-                    <a href="https://vk.com/soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-1.svg" alt="ВКонтакте" class="w-6 h-6">
-                    </a>
-                    <a href="https://t.me/soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-2.svg" alt="Telegram" class="w-6 h-6">
-                    </a>
-                    <a href="https://wa.me/74992298999" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-3.svg" alt="WhatsApp" class="w-6 h-6">
-                    </a>
-                    <a href="https://youtube.com/@soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-4.svg" alt="YouTube" class="w-6 h-6">
-                    </a>
-                    <a href="https://instagram.com/soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container.svg" alt="Instagram" class="w-6 h-6">
-                    </a>
-                </div>
-
                 <!-- Копирайт -->
-                <div class="text-gray-400 text-xs mt-8 border-t border-gray-700 pt-4">
+                <div class="text-gray-400 text-xs mt-8  pt-4">
                     © 2025, ООО «ИМПЕРИЯ», ИНН 773065345<br>
                     ОГРН 111774683794
                 </div>
@@ -805,31 +776,9 @@
                     <a href="#" class="text-gray-400 hover:text-white transition duration-200">Cookies</a>
                     <a href="#" class="text-gray-400 hover:text-white transition duration-200">Контакты</a>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="https://vk.com/soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-1.svg" alt="ВКонтакте" class="w-6 h-6">
-                    </a>
-                    <a href="https://t.me/soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-2.svg" alt="Telegram" class="w-6 h-6">
-                    </a>
-                    <a href="https://wa.me/74992298999" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-3.svg" alt="WhatsApp" class="w-6 h-6">
-                    </a>
-                    <a href="https://youtube.com/@soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-4.svg" alt="YouTube" class="w-6 h-6">
-                    </a>
-                    <a href="https://instagram.com/soueast" target="_blank" rel="noopener noreferrer"
-                        class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container.svg" alt="Instagram" class="w-6 h-6">
-                    </a>
-                </div>
             </div>
 
-            <div class="border-t border-gray-700 mt-8"></div>
+            <div class=" mt-8"></div>
 
 
         </div>
