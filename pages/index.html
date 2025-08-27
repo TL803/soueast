@@ -71,25 +71,25 @@
 </head>
 
 <body class="font-sans bg-black text-white">
-    <header class="w-full ">
-        <!-- Верхняя строка -->
-        <div class="header-top py-[20px]">
+    <header class="w-full">
+        <!-- Верхняя строка (для десктопа) -->
+        <div class="header-top py-[20px] md:flex hidden">
             <div class="container mx-auto flex justify-between items-center px-4 py-3">
                 <div class="flex items-center space-x-[16px]">
-                    <img src="../assets/logo.svg" alt="../assets/logo.svg">
+                    <img src="../assets/logo.svg" alt="Logo">
                     <span class="text-sm">| НЕЗАВИСИМОСТЬ</span>
                 </div>
                 <div class="flex items-center space-x-6 text-sm">
                     <div class="flex items-center text-white space-x-[5px]">
-                        <img src="../assets/place.svg" alt="">
+                        <img src="../assets/place.svg" alt="Location" class="w-4 h-4">
                         <span>г. Москва, Береговой проезд, 4/6, стр. 3</span>
                     </div>
                     <div class="flex items-center text-white space-x-[5px]">
-                        <img src="../assets/phone.svg" alt="">
+                        <img src="../assets/phone.svg" alt="Phone" class="w-4 h-4">
                         <span>+7 (499) 229-89-99</span>
                     </div>
                     <div class="flex items-center space-x-2 text-white space-x-[5px]">
-                        <img src="../assets/time.svg" alt="">
+                        <img src="../assets/time.svg" alt="Time" class="w-4 h-4">
                         <span>пн-вс, 9:00–21:00</span>
                     </div>
                     <button
@@ -100,10 +100,10 @@
             </div>
         </div>
 
-        <div class="w-full h-[1px]  bg-[#4c4c4c]"></div>
+        <div class="w-full h-[1px] bg-[#4c4c4c] md:block hidden"></div>
 
-        <!-- Вторая строка меню -->
-        <div class="header-bottom sticky top-0 z-50 bg-black shadow-md">
+        <!-- Вторая строка меню (для десктопа) -->
+        <div class="header-bottom sticky top-0 z-50 bg-black shadow-md md:flex hidden">
             <div class="container mx-auto flex justify-between items-center px-4 py-4">
                 <div class="flex space-x-6">
                     <a href="#"
@@ -127,35 +127,86 @@
             </div>
         </div>
 
-        <!-- Баннер -->
-        <div class="banner-section">
+        <!-- Баннер для десктопа -->
+        <div class="banner-section md:block hidden">
             <div class="container mx-auto h-full">
                 <div class="flex items-center h-full">
                     <div class="w-1/2 pl-4">
-                        <h1 class="text-[32px] font-semibold text-white mb-6 leading-[40px]">
+                        <h1 class="text-[20px] md:text-[32px] font-semibold text-white mb-6 leading-[40px]">
                             Кредит от 0.01%<br>
                             с выгодой до 400 000 ₽
                         </h1>
                         <button
-                            class="bg-orange-500 hover:bg-orange-600 text-black px-[128px] py-[16px] rounded-[8px] text-lg font-medium transition duration-200">
+                            class="bg-orange-500 hover:bg-orange-600 text-black  md:px-[128px] py-[16px] rounded-[8px] text-lg font-medium transition duration-200">
                             Подробнее
                         </button>
-
-
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Адаптивный header (только для мобильных) -->
+        <div class="md:hidden flex justify-between items-center  p-4 bg-black text-white">
+            <div class="flex items-center space-x-4">
+                <img src="../assets/logo.svg" alt="SOUEAST Logo" class="w-48 h-auto">
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+74992298999" class="text-orange-500 hover:text-orange-400 transition duration-200">
+                    <img src="../assets/phone.svg" alt="Phone" class="w-6 h-6">
+                </a>
+                <button id="menuToggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Мобильное меню (только для мобильных) -->
+        <div id="mobileMenu" class="md:hidden bg-black text-white p-4 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">S09</a>
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">S07</a>
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">S06</a>
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">Автомобили в наличии</a>
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">Trade-in</a>
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">Кредит</a>
+                <a href="#" class="text-white hover:text-orange-500 transition duration-200">Спецпредложения</a>
+            </div>
+        </div>
+
+        <!-- Адаптивный баннер (только для мобильных) -->
+        <div class="md:hidden relative w-full h-[500px] overflow-hidden">
+            <img src="../assets/banner.png" alt="Banner background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-start px-6">
+                <div class="max-w-lg text-white">
+                    <h1 class="text-[20px] md:text-[28px] font-semibold mb-6 leading-tight">
+                        Кредит от 0.01%<br>
+                        с выгодой до 400 000 ₽
+                    </h1>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-black w-full md:px-[128px] py-[16px] rounded-[8px] text-lg font-medium transition duration-200">
+                        Подробнее
+                    </button>
                 </div>
             </div>
         </div>
     </header>
 
 
+
+
+
     <main>
         <section class="py-12">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
+            <div class="container mx-auto px-4  justify-between flex flex-col items-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-[64px]">
                     <a href="./auto.html" class="block">
                         <div
-                            class="bg-[#111214] w-[425px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                            class="bg-[#111214] w-[335px] md:w-[425px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
                             <div class="relative">
                                 <img src="../assets/carInCard.png" alt="S07 Premium 4WD"
                                     class="w-full h-60 object-cover">
@@ -182,7 +233,7 @@
                         </div>
                     </a>
                     <div
-                        class="bg-[#111214] w-[425px] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                        class="bg-[#111214] w-[335px] md:w-[425px]  rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
                         <div class="relative">
                             <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
                             <div
@@ -207,7 +258,7 @@
                         </div>
                     </div>
                     <div
-                        class="bg-[#111214] w-[425px] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+                        class="bg-[#111214] w-[335px] md:w-[425px]  rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
                         <div class="relative">
                             <img src="../assets/carInCard.png" alt="S07 Premium 4WD" class="w-full h-60 object-cover">
                             <div
@@ -242,118 +293,135 @@
 
 
         <section class="py-12 bg-black">
+            <div class="container w-[355px] md:w-full mx-auto px-4">
+                <!-- Заголовок: адаптивный размер -->
+                <h2 class="text-[36px] sm:text-[40px] font-medium text-white mb-6">Кредит от 0.01%</h2>
 
-            <div class="container mx-auto px-4">
-                <h2 class="text-[40px] font-medium text-white mb-6">Кредит от 0.01%</h2>
-                <div class="flex flex-col md:flex-row items-center gap-6 bg-[#111214] rounded-[20px]">
-                    <!-- Основной контейнер: слева форма, справа изображение -->
-                    <div class="w-full md:w-1/2   bg-[#121315] p-6">
+                <!-- Карточка с адаптивом -->
+                <div
+                    class="relative bg-[#111214] rounded-[20px] overflow-hidden shadow-xl md:flex md:flex-row md:items-center">
 
-                        <div class="space-y-6 ">
-                            <p class="text-[20px] font-medium">1. Введите сумму первоначального взноса</p>
-                            <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="50000"
-                                value="500000" class="w-full h-[23px] slider" />
-                            <div class="flex justify-between mt-10 items-center">
-                                <span class="text-[16px] text-gray-400">Первоначальный взнос</span>
-                                <span id="initialPaymentValue"
-                                    class="text-white text-[20px] font-medium border border-[#3c3c3e] px-[28px] py-[12px] rounded-md">
-                                    500 000 ₽
-                                </span>
-                            </div>
-                        </div>
+                    <!-- Форма -->
+                    <div class="w-full md:w-1/2 p-5 md:p-8 relative z-10 bg-[#121315] md:bg-transparent">
 
-                        <!-- Шаг 2: Срок кредита -->
-                        <div class="space-y-6">
-                            <p class="text-[20px] font-medium">2. Выберите срок кредита</p>
-                            <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
-                                class="w-full h-[23px] slider" />
-                            <div class="flex justify-between mt-10">
-                                <div class="text-center">
-                                    <button id="loanTermValue"
-                                        class="text-[20px] border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg hover:bg-gray-700 transition">
-                                        8 лет
-                                    </button>
-                                    <p class="text-[16px] mt-[20px] text-gray-400">Срок кредита</p>
-                                </div>
-                                <div class="text-center">
-                                    <button id="monthlyPaymentValue"
-                                        class="text-[20px] border border-[#3c3c3e] text-white font-medium px-[28px] py-[12px] rounded-lg hover:bg-gray-700 transition">
-                                        80 000 ₽
-                                    </button>
-                                    <p class="text-[16px] mt-[20px] text-gray-400">Ежемесячный платёж</p>
+                        <!-- Фон только на мобильных -->
+                        <div class="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
+                            style="background-image: url('../assets/carLogoSoueast.png');"></div>
+                        <div class="absolute inset-0 bg-black opacity-40 md:hidden"></div>
+
+                        <!-- Контент формы -->
+                        <div class="relative space-y-6">
+                            <!-- Шаг 1 -->
+                            <div class="space-y-4">
+                                <p class="text-[18px] sm:text-[20px] font-medium text-white">1. Введите сумму
+                                    первоначального взноса</p>
+                                <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="50000"
+                                    value="500000" class="w-full h-2 slider bg-gray-700 rounded-full" />
+                                <div class="flex justify-between mt-3">
+                                    <span class="text-[14px] sm:text-[16px] text-gray-400">Первоначальный взнос</span>
+                                    <span id="initialPaymentValue"
+                                        class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md">
+                                        500 000 ₽
+                                    </span>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Кнопка рассчитать -->
-                        <button
-                            class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium mt-[40px] text-lg py-3 px-6 rounded-lg transition duration-200">
-                            Рассчитать
-                        </button>
+                            <!-- Шаг 2 -->
+                            <div class="space-y-4">
+                                <p class="text-[18px] sm:text-[20px] font-medium text-white">2. Выберите срок кредита
+                                </p>
+                                <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
+                                    class="w-full h-2 slider bg-gray-700 rounded-full" />
+                                <div class="flex justify-between mt-3">
+                                    <div class="text-center">
+                                        <button id="loanTermValue"
+                                            class="text-[18px] sm:text-[20px] border border-[#3c3c3e] text-white font-medium px-[20px] py-[10px] rounded-lg hover:bg-gray-700 transition">
+                                            8 лет
+                                        </button>
+                                        <p class="text-[12px] sm:text-[14px] mt-2 text-gray-400">Срок кредита</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <button id="monthlyPaymentValue"
+                                            class="text-[18px] sm:text-[20px] border border-[#3c3c3e] text-white font-medium px-[20px] py-[10px] rounded-lg hover:bg-gray-700 transition">
+                                            80 000 ₽
+                                        </button>
+                                        <p class="text-[12px] sm:text-[14px] mt-2 text-gray-400">Ежемесячный платёж</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Кнопка -->
+                            <button
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg sm:text-xl py-3 px-6 rounded-lg transition duration-200 mt-6">
+                                Рассчитать
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Изображение -->
-                    <div class="w-full md:w-1/2 relative">
+                    <!-- Изображение — только на десктопе -->
+                    <div class="hidden md:block w-full md:w-1/2 relative">
                         <img src="../assets/carLogoSoueast.png" alt="Soueast Logo"
-                            class="w-full h-full object-cover rounded-2xl" />
+                            class="w-full h-full object-cover rounded-r-[20px] min-h-[400px]" />
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="py-12 bg-black">
-            <div class="container mx-auto px-4">
-                <h2 class="text-[40px] font-medium text-white mb-8">Акции и спецпредложения</h2>
+            <div class="container flex flex-col items-center md:block mx-auto px-4">
+                <h2 class=" md:text-[40px] font-medium text-white mb-8">Акции и спецпредложения</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
                     <!-- Карточка 1 -->
-                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                    <div class="relative h-[237px] md:h-[530px] w-[335px] md:w-auto cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
                         style="background-image: url('../assets/stocks/party.png'); background-size: cover; background-position: center;">
                         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                            <h3 class="text-[32px] font-semibold text-white mb-4">Выгода по кредиту<br>до 400 000 ₽</h3>
+                            <h3 class="text-[16px] md:text-[32px] font-semibold text-white mb-4">Выгода по кредиту<br>до
+                                400 000 ₽</h3>
                             <button
-                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[14px] md:text-[20px] text-black font-medium py-2 md:py-3 md:px-6 rounded-lg transition duration-200">
                                 Узнать подробнее
                             </button>
                         </div>
                     </div>
 
                     <!-- Карточка 2 -->
-                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                    <div class="relative h-[237px] md:h-[530px] w-[335px] md:w-auto cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
                         style="background-image: url('../assets/stocks/woman.jpg'); background-size: cover; background-position: center;">
                         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                            <h3 class="text-[32px] font-semibold text-white mb-4">Льготы на покупку<br>от SOUEAST</h3>
+                            <h3 class="text-[16px] md:text-[32px] font-semibold text-white mb-4">Льготы на покупку<br>от
+                                SOUEAST</h3>
                             <button
-                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[14px] md:text-[20px] text-black font-medium py-2 md:py-3 md:px-6 rounded-lg transition duration-200">
                                 Узнать подробнее
                             </button>
                         </div>
                     </div>
 
                     <!-- Карточка 3 -->
-                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                    <div class="relative h-[237px] md:h-[530px] w-[335px] md:w-auto cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
                         style="background-image: url('../assets/stocks/car.png'); background-size: cover; background-position: center;">
                         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                            <h3 class="text-[32px] font-semibold text-white mb-4">Выгода на доп.<br>оборудование до 180
-                                000 ₽</h3>
+                            <h3 class="text-[16px] md:text-[32px] font-semibold text-white mb-4">Выгода на
+                                доп.<br>оборудование до 180 000 ₽</h3>
                             <button
-                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[14px] md:text-[20px] text-black font-medium py-2 md:py-3 md:px-6 rounded-lg transition duration-200">
                                 Узнать подробнее
                             </button>
                         </div>
                     </div>
 
                     <!-- Карточка 4 -->
-                    <div class="relative h-[530px] cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
+                    <div class="relative h-[237px] md:h-[530px] w-[335px] md:w-auto cursor-pointer rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300"
                         style="background-image: url('../assets/stocks/childs.png'); background-size: cover; background-position: center;">
                         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                            <h3 class="text-[32px] font-semibold text-white mb-4">SOUEAST TRADE-UP:<br>выгода до 350 000
-                                ₽</h3>
+                            <h3 class="text-[16px] md:text-[32px] font-semibold text-white mb-4">SOUEAST
+                                TRADE-UP:<br>выгода до 350 000 ₽</h3>
                             <button
-                                class="w-full bg-orange-500 hover:bg-orange-600 text-[20px] text-black font-medium py-3 px-6 rounded-lg transition duration-200">
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-[14px] md:text-[20px] text-black font-medium py-2 md:py-3 md:px-6 rounded-lg transition duration-200">
                                 Узнать подробнее
                             </button>
                         </div>
@@ -363,9 +431,12 @@
         </section>
 
         <section class="py-12 bg-black">
-            <div class="container mx-auto px-4">
-                <h2 class="text-[40px] font-medium text-white mb-8">Обменяйте свой автомобиль на новый
-                    SOUEAST!</h2>
+            <div class="container w-[335px] md:w-full mx-auto px-4">
+                <!-- Заголовок -->
+                <h2
+                    class="font-regular text-[18px] md:text-[40px] font-medium text-white mb-6 md:mb-8 text-center md:text-left">
+                    Обменяйте свой автомобиль на новый SOUEAST!
+                </h2>
 
                 <div
                     class="flex flex-col md:flex-row gap-6 items-center bg-[#111214] rounded-2xl overflow-hidden shadow-xl">
@@ -374,22 +445,23 @@
                         <img src="../assets/womenNearCar.png" alt="Женщина у автомобиля SOUEAST S09"
                             class="w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                        <!-- Кнопка по центру на мобильных -->
                         <button
-                            class="absolute bottom-6 left-6 w-[480px] bg-orange-500 hover:bg-orange-600 text-black font-medium py-3 px-6 rounded-lg transition duration-200 z-10 transform hover:scale-105">
+                            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0 text-[14px] md:text-[16px] w-[90%] md:w-[480px] max-w-[480px] bg-orange-500 hover:bg-orange-600 text-black font-medium py-3 rounded-lg transition duration-200 z-10 hover:scale-105">
                             Получить оценку своего авто
                         </button>
                     </div>
 
                     <!-- Правая часть: Аккордеоны -->
-                    <div class="w-full md:w-1/2 p-6 bg-[#111214]">
-                        <!-- Аккордеон 1: Выгода до 350 000 ₽ -->
-                        <div class="mb-6 border-b border-gray-700 pb-4 group">
+                    <div class="w-full md:w-1/2 p-4 md:p-6 bg-[#111214]">
+                        <!-- Аккордеон 1 -->
+                        <div class="mb-4 border-b border-gray-700 pb-3 group">
                             <button
-                                class="flex justify-between items-center w-full text-left text-white font-medium text-lg py-3 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
+                                class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
                                 onclick="toggleAccordion('accordion1')">
                                 <span>Выгода до 350 000 ₽</span>
-                                <svg class="w-6 h-6 transition-transform duration-300" id="icon1" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" id="icon1"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
@@ -401,14 +473,14 @@
                             </div>
                         </div>
 
-                        <!-- Аккордеон 2: Почему это удобно -->
-                        <div class="mb-6 border-b border-gray-700 pb-4 group">
+                        <!-- Аккордеон 2 -->
+                        <div class="mb-4 border-b border-gray-700 pb-3 group">
                             <button
-                                class="flex justify-between items-center w-full text-left text-white font-medium text-lg py-3 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
+                                class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
                                 onclick="toggleAccordion('accordion2')">
                                 <span>Почему это удобно</span>
-                                <svg class="w-6 h-6 transition-transform duration-300" id="icon2" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" id="icon2"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
@@ -420,14 +492,14 @@
                             </div>
                         </div>
 
-                        <!-- Аккордеон 3: Как это работает -->
-                        <div class="border-b border-gray-700 pb-4 group">
+                        <!-- Аккордеон 3 -->
+                        <div class="border-b border-gray-700 pb-3 group">
                             <button
-                                class="flex justify-between items-center w-full text-left text-white font-medium text-lg py-3 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
+                                class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
                                 onclick="toggleAccordion('accordion3')">
                                 <span>Как это работает</span>
-                                <svg class="w-6 h-6 transition-transform duration-300" id="icon3" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" id="icon3"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
@@ -445,22 +517,23 @@
 
 
 
-        <section class="py-12 bg-black">
-            <div class="container mx-auto px-4">
-                <h2 class="text-[40px] font-regular text-white mb-6">Независимость — официальный дилер SOUEAST</h2>
-                <div class="flex flex-col md:flex-row gap-8 items-start">
-                    <!-- Левая часть: Текст -->
-                    <div class="w-full md:w-1/2 space-y-6">
-                        <p class="text-gray-300 text-[20px] font-regular leading-relaxed">
+        <section class="py-12 bg-black ">
+            <div class="container mx-auto px-4 w-[335px] md:w-full">
+                <h2 class="text-[20px] md:text-[40px] font-regular text-white mb-6 md:text-center md:text-left">
+                    Независимость — официальный дилер SOUEAST</h2>
+
+                <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                    <div class="w-full md:w-1/2 space-y-5">
+                        <p class="text-gray-300 text-[16px] md:text-[20px] font-regular leading-relaxed">
                             Компания «Независимость» — это надёжный официальный партнёр SOUEAST. Мы предлагаем
                             автомобили только из официальных поставок, с заводской гарантией и полным пакетом сервисной
                             поддержки.
                         </p>
-                        <p class="text-gray-300 text-[20px] font-regular leading-relaxed">
+                        <p class="text-gray-300 text-[16px] md:text-[20px] font-regular leading-relaxed">
                             Наши клиенты выбирают нас за прозрачные условия покупки, честную оценку по трейд-ин,
                             выгодные программы и профессиональное обслуживание с оригинальными запчастями.
                         </p>
-                        <p class="text-gray-300 text-[20px] font-regular leading-relaxed">
+                        <p class="text-gray-300 text-[16px] md:text-[20px] font-regular leading-relaxed">
                             В «Независимости» покупка SOUEAST — это гарантия качества, уверенность в каждом километре и
                             комфорт на всех этапах владения.
                         </p>
@@ -471,18 +544,18 @@
                         <!-- Основное изображение -->
                         <div class="relative rounded-xl overflow-hidden shadow-lg">
                             <img src="../assets/Neza-Soueast.png" alt="Дилерский центр SOUEAST"
-                                class="w-full h-64 md:h-80 object-cover" />
+                                class="w-full h-48 md:h-80 object-cover" />
                         </div>
 
                         <!-- Два маленьких изображения -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="rounded-xl overflow-hidden shadow-lg">
                                 <img src="../assets/Neza-Soueast1.png" alt="SOUEAST S09"
-                                    class="w-full h-32 object-cover" />
+                                    class="w-full h-28 md:h-32 object-cover" />
                             </div>
                             <div class="rounded-xl overflow-hidden shadow-lg">
                                 <img src="../assets/Neza-Soueast2.png" alt="Интерьер дилерского центра"
-                                    class="w-full h-32 object-cover" />
+                                    class="w-full h-28 md:h-32 object-cover" />
                             </div>
                         </div>
                     </div>
@@ -493,35 +566,45 @@
 
         <section class="py-12 bg-black">
             <div class="container mx-auto px-4">
-                <h2 class="text-[40px] font-medium text-white mb-8">Контакты</h2>
+                <h2 class="text-[20px] md:text-[40px] font-medium text-white mb-6 md:mb-8 text-center md:text-left">
+                    Контакты
+                </h2>
 
-                <div class="flex flex-col md:flex-row gap-[32px] items-start">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-[32px]">
+                    <!-- Карта -->
                     <div class="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae548079d84e22e0ce482be3969ed695a5165564027de6591218c0ab98beaaf00&amp;source=constructor"
-                            width="824" height="500" frameborder="0"></iframe>
+                            class="w-full h-64 md:h-80 lg:h-[500px]" frameborder="0" allowfullscreen="" loading="lazy"
+                            title="Карта проезда к дилерскому центру SOUEAST">
+                        </iframe>
                     </div>
 
-                    <div class="w-full md:w-1/2 space-y-6">
-                        <div class="flex items-center space-x-3">
-                            <img src="../assets/orangeIcons/Vector.svg" alt="">
-                            <p class="text-white text-xl">г. Москва, Береговой проезд, 4/6, стр. 3</p>
+                    <!-- Информация и кнопка -->
+                    <div class="w-full md:w-1/2 space-y-5 md:space-y-6">
+                        <!-- Адрес -->
+                        <div class="flex items-start space-x-3">
+                            <img src="../assets/orangeIcons/Vector.svg" alt="Адрес" class="w-6 h-6 mt-1">
+                            <p class="text-white text-[16px] md:text-xl leading-relaxed">
+                                г. Москва, Береговой проезд, 4/6, стр. 3
+                            </p>
                         </div>
 
+                        <!-- Телефон -->
                         <div class="flex items-center space-x-3">
-                            <img src="../assets/orangeIcons/ic_phone_in_talk_48px.svg" alt="">
-
-                            <a href="tel:+74992298999" class="text-white text-xl">+7 (499) 229-89-99</a>
+                            <img src="../assets/orangeIcons/ic_phone_in_talk_48px.svg" alt="Телефон" class="w-6 h-6">
+                            <a href="tel:+74992298999" class="text-white text-[16px] md:text-xl">+7 (499) 229-89-99</a>
                         </div>
 
+                        <!-- Режим работы -->
                         <div class="flex items-center space-x-3">
-                            <img src="../assets/orangeIcons/ic_schedule_48px.svg" alt="">
-
-                            <p class="text-white text-xl">Пн–вс, 9:00–21:00</p>
+                            <img src="../assets/orangeIcons/ic_schedule_48px.svg" alt="Время работы" class="w-6 h-6">
+                            <p class="text-white text-[16px] md:text-xl">Пн–вс, 9:00–21:00</p>
                         </div>
 
+                        <!-- Кнопка -->
                         <button
-                            class=" bg-orange-500 hover:bg-orange-600 text-black font-medium py-4 px-[172px] rounded-lg transition duration-200 text-lg">
+                            class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium py-4 px-6 rounded-lg transition duration-200 text-lg">
                             Заказать звонок
                         </button>
                     </div>
@@ -532,7 +615,8 @@
 
     <footer class="bg-[#0a0a0a] text-white py-12">
         <div class="container mx-auto px-4">
-            <!-- Верхняя часть: Логотип и название -->
+
+            <!-- Логотип и слоган -->
             <div class="flex items-center mb-12">
                 <img src="../assets/logo.svg" alt="SOUEAST Logo" class="w-64 h-auto">
                 <div class="ml-8 border-l border-gray-700 pl-8">
@@ -540,8 +624,8 @@
                 </div>
             </div>
 
-            <!-- Колонки меню -->
-            <div class="flex justify-between gap-12 mb-12">
+            <!-- Десктоп: три колонки -->
+            <div class="hidden md:flex justify-between gap-12 mb-12">
                 <!-- Колонка 1: Модели -->
                 <div>
                     <h3 class="text-lg font-semibold mb-6">Модели</h3>
@@ -573,7 +657,7 @@
                 </div>
 
                 <!-- Колонка 3: О сервисе -->
-                <div class="w-[180px] ">
+                <div class="w-[180px]">
                     <h3 class="text-lg font-semibold mb-6">О сервисе</h3>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">История
@@ -582,6 +666,119 @@
                         </li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Новости</a></li>
                     </ul>
+                </div>
+            </div>
+            <!-- Мобильная версия: раскрывающиеся меню -->
+            <div class="md:hidden mt-8">
+                <div class="space-y-4">
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('models')">
+                            Модели
+                            <svg id="models-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="models-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S09</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S07</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S06</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('buyers')">
+                            Покупателям
+                            <svg id="buyers-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="buyers-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Автомобили
+                                в наличии</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Онлайн-оценка</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Спецпредложения</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Социальная
+                                программа</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Корпоративным
+                                клиентам</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Запись на
+                                тест-драйв</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('service')">
+                            О сервисе
+                            <svg id="service-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="service-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">История
+                                SOUEAST</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Экотехнологии</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Новости</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Политика и контакты -->
+                <div class="mt-6 space-y-2">
+                    <a href="#" class="block text-gray-400 hover:text-white transition duration-200">Политика
+                        конфиденциальности</a>
+                    <a href="#" class="block text-gray-400 hover:text-white transition duration-200">Cookies</a>
+                    <a href="#" class="block text-gray-400 hover:text-white transition duration-200">Контакты</a>
+                </div>
+
+                <!-- Соцсети -->
+                <div class="flex space-x-6 mt-6">
+                    <a href="https://vk.com/soueast" target="_blank" rel="noopener noreferrer"
+                        class="transition transform hover:scale-110">
+                        <img src="../assets/social/Container-1.svg" alt="ВКонтакте" class="w-6 h-6">
+                    </a>
+                    <a href="https://t.me/soueast" target="_blank" rel="noopener noreferrer"
+                        class="transition transform hover:scale-110">
+                        <img src="../assets/social/Container-2.svg" alt="Telegram" class="w-6 h-6">
+                    </a>
+                    <a href="https://wa.me/74992298999" target="_blank" rel="noopener noreferrer"
+                        class="transition transform hover:scale-110">
+                        <img src="../assets/social/Container-3.svg" alt="WhatsApp" class="w-6 h-6">
+                    </a>
+                    <a href="https://youtube.com/@soueast" target="_blank" rel="noopener noreferrer"
+                        class="transition transform hover:scale-110">
+                        <img src="../assets/social/Container-4.svg" alt="YouTube" class="w-6 h-6">
+                    </a>
+                    <a href="https://instagram.com/soueast" target="_blank" rel="noopener noreferrer"
+                        class="transition transform hover:scale-110">
+                        <img src="../assets/social/Container.svg" alt="Instagram" class="w-6 h-6">
+                    </a>
+                </div>
+
+                <!-- Копирайт -->
+                <div class="text-gray-400 text-xs mt-8 border-t border-gray-700 pt-4">
+                    © 2025, ООО «ИМПЕРИЯ», ИНН 773065345<br>
+                    ОГРН 111774683794
                 </div>
             </div>
 
@@ -600,40 +797,69 @@
             <div class="border-t border-gray-700 mb-8"></div>
 
             <!-- Нижняя часть: Ссылки и соцсети -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
-                <div class="flex space-x-8 ">
-                    <a href="#" class=" transition duration-200">Политика конфиденциальности</a>
-                    <a href="#" class=" transition duration-200">Cookies</a>
-                    <a href="#" class=" transition duration-200">Контакты</a>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0 ">
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-center md:text-left">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Политика
+                        конфиденциальности</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Cookies</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Контакты</a>
                 </div>
                 <div class="flex space-x-6">
                     <a href="https://vk.com/soueast" target="_blank" rel="noopener noreferrer"
                         class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-1.svg" alt="ВКонтакте">
+                        <img src="../assets/social/Container-1.svg" alt="ВКонтакте" class="w-6 h-6">
                     </a>
                     <a href="https://t.me/soueast" target="_blank" rel="noopener noreferrer"
                         class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-2.svg" alt="Telegram">
+                        <img src="../assets/social/Container-2.svg" alt="Telegram" class="w-6 h-6">
                     </a>
                     <a href="https://wa.me/74992298999" target="_blank" rel="noopener noreferrer"
                         class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-3.svg" alt="WhatsApp">
+                        <img src="../assets/social/Container-3.svg" alt="WhatsApp" class="w-6 h-6">
                     </a>
                     <a href="https://youtube.com/@soueast" target="_blank" rel="noopener noreferrer"
                         class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container-4.svg" alt="YouTube">
+                        <img src="../assets/social/Container-4.svg" alt="YouTube" class="w-6 h-6">
                     </a>
                     <a href="https://instagram.com/soueast" target="_blank" rel="noopener noreferrer"
                         class="transition transform hover:scale-110">
-                        <img src="../assets/social/Container.svg" alt="Instagram">
+                        <img src="../assets/social/Container.svg" alt="Instagram" class="w-6 h-6">
                     </a>
                 </div>
             </div>
+
             <div class="border-t border-gray-700 mt-8"></div>
+
+
         </div>
+
+        <script>
+            function toggleMenu(id) {
+                const content = document.getElementById(id + '-content');
+                const arrow = document.getElementById(id + '-arrow');
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    arrow.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            }
+        </script>
     </footer>
     <script src="../script/components/slider/CreditSlider.js"></script>
     <script src="../script/components/Toggle/toggleList.js"></script>
+
+
+    <script>
+        // Скрипт для переключения мобильного меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
