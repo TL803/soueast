@@ -326,61 +326,115 @@
             </div>
         </section>
 
-        <section class="py-12 bg-black ">
+        <section class="py-12 bg-black">
             <div class="container w-[355px] md:w-full mx-auto px-4">
-                <h2 class="md:text-[40px] font-medium text-white mb-8 text-center md:text-start">Кредит от 0.01%</h2>
+                <!-- Заголовок -->
+                <h2 class="text-[36px] sm:text-[40px] font-medium text-white mb-6 text-center md:text-start">Кредит от
+                    0.01%</h2>
 
+                <!-- Карточка -->
                 <div
                     class="relative bg-[#111214] rounded-[20px] overflow-hidden shadow-xl md:flex md:flex-row md:items-center">
-
                     <!-- Форма -->
-                    <div class="w-full md:w-1/2 p-4 md:p-6 relative z-10 bg-[#121315] md:bg-transparent">
+                    <div class="w-full md:w-1/2 p-5 md:p-8 relative z-10 bg-[#121315] md:bg-transparent">
                         <!-- Фон на мобильных -->
                         <div class="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
                             style="background-image: url('../assets/carLogoSoueast.png');"></div>
                         <div class="absolute inset-0 bg-black opacity-40 md:hidden"></div>
 
                         <!-- Контент формы -->
-                        <div class="relative space-y-5">
+                        <div class="relative space-y-6">
 
-                            <!-- Шаг 1: Процент взноса -->
-                            <div class="space-y-3">
-                                <p class="text-[16px] font-medium text-white">1. Введите сумму первоначального взноса
-                                </p>
-                                <div class="relative h-6 flex items-center">
-                                    <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="100000"
-                                        value="500000" class="w-full slider" />
+                            <!-- Шаг 1: Выберите авто -->
+                            <div class="space-y-4">
+                                <p class="text-[18px] sm:text-[20px] font-medium text-white">1. Выберите авто</p>
+
+                                <!-- Выбор модели -->
+                                <div class="relative">
+                                    <select
+                                        class="w-full bg-[#111214] border border-[#3c3c3e] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none">
+                                        <option>Модель</option>
+                                        <option>Model X</option>
+                                        <option>Model Y</option>
+                                        <option>Model Z</option>
+                                    </select>
+                                    <svg class="absolute right-3 top-3.5 w-5 h-5 text-gray-500" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
                                 </div>
-                                <div class="mt-2 text-center">
-                                    <!-- Процент взноса -->
-                                    <span id="initialPercentValue"
-                                        class="block text-center text-[18px] sm:text-[20px] font-medium text-white bg-[#1e1e1e] border border-[#3c3c3e] py-3 rounded-lg">
-                                        50%
-                                    </span>
-                                    <p class="text-[12px] sm:text-[14px] text-gray-400 mt-1">Первоначальный взнос</p>
+
+                                <!-- Выбор комплектации -->
+                                <div class="relative mt-3">
+                                    <select
+                                        class="w-full bg-[#111214] border border-[#3c3c3e] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none">
+                                        <option>Комплектация</option>
+                                        <option>Базовая</option>
+                                        <option>Премиум</option>
+                                        <option>Топ</option>
+                                    </select>
+                                    <svg class="absolute right-3 top-3.5 w-5 h-5 text-gray-500" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
                                 </div>
                             </div>
 
-                            <!-- Шаг 2: Срок кредита -->
-                            <div class="space-y-3">
-                                <p class="text-[16px] font-medium text-white">2. Выберите срок кредита</p>
-                                <div class="relative h-6 flex items-center">
-                                    <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
-                                        class="w-full slider" />
+                            <!-- Шаг 2: Первоначальный взнос -->
+                            <div class="space-y-4">
+                                <p class="text-[18px] sm:text-[20px] font-medium text-white">2. Введите сумму
+                                    первоначального взноса</p>
+                                <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="50000"
+                                    value="500000" class="w-full h-6 slider bg-gray-700 rounded-full" />
+
+                                <div class="flex justify-between mt-3 space-x-4">
+                                    <div class="text-center flex-1">
+                                        <div id="initialPercentValue"
+                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            10%
+                                        </div>
+                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Процент</p>
+                                    </div>
+                                    <div class="text-center flex-1">
+                                        <div id="initialPaymentValue"
+                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            500 000 ₽
+                                        </div>
+                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Сумма</p>
+                                    </div>
                                 </div>
-                                <div class="mt-2 text-center">
-                                    <!-- Срок кредита -->
-                                    <button id="loanTermValue"
-                                        class="block w-full text-center text-[18px] sm:text-[20px] font-medium text-white bg-[#1e1e1e] border border-[#3c3c3e] py-3 rounded-lg ">
-                                        8 лет
-                                    </button>
-                                    <p class="text-[12px] sm:text-[14px] text-gray-400 mt-1">Срок кредита</p>
+                            </div>
+
+                            <!-- Шаг 3: Срок кредита и платёж -->
+                            <div class="space-y-4">
+                                <p class="text-[18px] sm:text-[20px] font-medium text-white">3. Выберите комфортный
+                                    платёж</p>
+                                <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
+                                    class="w-full h-6 slider bg-gray-700 rounded-full" />
+
+                                <div class="flex justify-between mt-3 space-x-4">
+                                    <div class="text-center flex-1">
+                                        <div id="loanTermValue"
+                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            8 лет
+                                        </div>
+                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Срок кредита</p>
+                                    </div>
+                                    <div class="text-center flex-1">
+                                        <div id="monthlyPaymentValue"
+                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            80 000 ₽
+                                        </div>
+                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Ежемесячный платёж</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Кнопка -->
                             <button
-                                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg py-3 px-6 rounded-lg transition duration-200 mt-4">
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg sm:text-xl py-3 px-6 rounded-lg transition duration-200 mt-6">
                                 Рассчитать
                             </button>
                         </div>
