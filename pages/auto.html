@@ -56,14 +56,14 @@
 
     <!-- Компактный хедер -->
     <header class="w-full">
-        <!-- Верхняя строка -->
-        <div class="py-[20px] border-b border-[#4c4c4c]">
-            <div class="container mx-auto flex justify-between items-center px-4 text-sm">
+        <!-- Верхняя строка (только десктоп) -->
+        <div class="header-top py-[20px] md:flex hidden">
+            <div class="container mx-auto flex justify-between items-center px-4">
                 <div class="flex items-center space-x-[16px]">
                     <img src="../assets/logo.svg" alt="Логотип">
-                    <span>| НЕЗАВИСИМОСТЬ</span>
+                    <span class="text-sm text-white">| НЕЗАВИСИМОСТЬ</span>
                 </div>
-                <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-6 text-sm text-white">
                     <div class="flex items-center space-x-[5px]">
                         <img src="../assets/place.svg" alt="Местоположение" class="h-4">
                         <span>г. Москва, Береговой проезд, 4/6, стр. 3</span>
@@ -84,8 +84,11 @@
             </div>
         </div>
 
-        <!-- Нижняя строка (меню) -->
-        <div class="sticky top-0 z-50 bg-black">
+        <!-- Разделительная линия (десктоп) -->
+        <div class="w-full h-[1px] bg-[#4c4c4c] md:block hidden"></div>
+
+        <!-- Нижняя строка меню (десктоп) -->
+        <div class="header-bottom sticky top-0 z-50 bg-black md:flex hidden">
             <div class="container mx-auto flex justify-between items-center px-4 py-4">
                 <div class="flex space-x-6">
                     <a href="#"
@@ -108,310 +111,384 @@
                 </nav>
             </div>
         </div>
+
+        <div class="md:hidden flex justify-between items-center p-4 bg-black text-white">
+            <img src="../assets/logo.svg" alt="Логотип">
+            <div class="flex items-center space-x-4">
+                <a href="tel:+74992298999" class="text-orange-500 hover:text-orange-400 transition">
+                    <img src="../assets/phone.svg" alt="Телефон" class="w-6 h-6">
+                </a>
+                <button id="menuToggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden bg-black text-white p-4 hidden">
+            <div class="flex flex-col space-y-4 text-lg">
+                <a href="#" class="hover:text-orange-500 transition">S09</a>
+                <a href="#" class="hover:text-orange-500 transition">S07</a>
+                <a href="#" class="hover:text-orange-500 transition">S06</a>
+                <a href="#" class="hover:text-orange-500 transition">Автомобили в наличии</a>
+                <a href="#" class="hover:text-orange-500 transition">Trade-in</a>
+                <a href="#" class="hover:text-orange-500 transition">Кредит</a>
+                <a href="#" class="hover:text-orange-500 transition">Спецпредложения</a>
+            </div>
+        </div>
     </header>
 
     <!-- Основной блок: Информация и изображение -->
-    <main class="container mx-auto py-8 px-4 md:px-0 mt-[30px]">
+    <main class="container mx-auto py-8 px-4 md:px-0 md:mt-[30px]">
 
-        <section class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
+<section class="flex flex-col items-center md:items-start md:flex-row gap-6 md:gap-12 mx-auto max-w-7xl px-4">
 
-            <!-- Левая часть: Информация -->
-            <div class="flex-1 space-y-10">
+    <!-- Левая часть: Информация -->
+    <div class="flex-1 space-y-10 order-2 md:order-1">
 
-                <!-- Заголовок -->
-                <h1 class="text-4xl md:text-5xl font-bold">S09 Comfort Plus</h1>
+        <!-- Заголовок -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+            S09 Comfort Plus
+        </h1>
 
-                <!-- Цвета -->
-                <div class="flex gap-3">
-                    <div class="w-[48px] h-[48px] rounded border border-gray-400 bg-gray-200 cursor-pointer"></div>
-                    <div class="w-[48px] h-[48px] rounded border-2 border-orange-accent bg-teal-600 cursor-pointer">
-                    </div>
-                    <div class="w-[48px] h-[48px] rounded border border-gray-400 bg-gray-200 cursor-pointer"></div>
-                    <div class="w-[48px] h-[48px] rounded border border-gray-400 bg-gray-400 cursor-pointer"></div>
-                    <div class="w-[48px] h-[48px] rounded border border-gray-400 bg-blue-600 cursor-pointer"></div>
-                    <div class="w-[48px] h-[48px] rounded border border-gray-400 bg-transparent cursor-pointer"></div>
-                </div>
+        <!-- Цвета -->
+        <div class="flex gap-3">
+            <div class="w-[40px] h-[40px] rounded border border-gray-400 bg-gray-200 cursor-pointer"></div>
+            <div class="w-[40px] h-[40px] rounded border-2 border-orange-accent bg-teal-600 cursor-pointer"></div>
+            <div class="w-[40px] h-[40px] rounded border border-gray-400 bg-gray-200 cursor-pointer"></div>
+            <div class="w-[40px] h-[40px] rounded border border-gray-400 bg-gray-400 cursor-pointer"></div>
+            <div class="w-[40px] h-[40px] rounded border border-gray-400 bg-blue-600 cursor-pointer"></div>
+            <div class="w-[40px] h-[40px] rounded border border-gray-400 bg-transparent cursor-pointer"></div>
+        </div>
 
-                <!-- Характеристики -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-6">
-                    <div class="flex items-center gap-2">
-                        <img src="../assets/auto/speed.svg" alt="Макс. скорость" class="w-[32px] opacity-80" />
-                        <div>
-                            <p class="text-xs text-gray-400">Макс. Скорость</p>
-                            <p class="font-medium">210 км/ч</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <img src="../assets/auto/ic_timer_48px.svg" alt="Разгон" class="w-[32px] opacity-80" />
-                        <div>
-                            <p class="text-xs text-gray-400">Разгон до 100 км</p>
-                            <p class="font-medium">7.9 сек.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <img src="../assets/auto/ic_local_gas_station_48px.svg" alt="Расход"
-                            class="w-[32px] opacity-80" />
-                        <div>
-                            <p class="text-xs text-gray-400">Расход</p>
-                            <p class="font-medium">9.9 л/100 км</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <img src="../assets/auto/ic_flash_on_48px.svg" alt="Мощность" class="w-[32px] opacity-80" />
-                        <div>
-                            <p class="text-xs text-gray-400">Мощность</p>
-                            <p class="font-medium">210 км/ч</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Баннеры выгоды -->
-                <div class="space-y-3">
-                    <div class="px-4 py-2 w-max rounded-lg bg-[#FE7600CC] text-black text-sm font-medium">
-                        500 000 ₽ выгоды при покупке в кредит
-                    </div>
-                    <div class="px-4 py-2 w-max rounded-lg bg-[#FE7600CC] text-black text-sm font-medium">
-                        350 000 ₽ выгода по трейд-ин
-                    </div>
-                    <div class="px-4 py-2 w-max rounded-lg bg-[#FE7600CC] text-black text-sm font-medium">
-                        Кредит от 0.01%
-                    </div>
-                </div>
-
-                <!-- Кредит -->
-
-
-                <!-- Цена -->
-                <div class="text-right">
-                    <p class=" text-[20px] line-through">1 408 000 ₽</p>
-                    <p class="text-[40px] font-medium">от 552 000 ₽</p>
-                    <p class="text-[16px] font-medium">В кредит от 3 333₽/мес</p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                    <button
-                        class="bg-[#111214] text-[#FE7600] px-8 py-4 rounded-xl font-bold text-lg transition hover:bg-[#1a1a1a]">
-                        Обменять по Trade-in
-                    </button>
-                    <button
-                        class="bg-[#FE7600] text-black px-8 py-4 rounded-xl font-bold text-lg transition hover:bg-[#e56c00]">
-                        Купить в кредит!
-                    </button>
+        <!-- Характеристики -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+            <div class="flex items-center justify-center gap-2">
+                <img src="../assets/auto/speed.svg" alt="Макс. скорость" class="w-6 opacity-80" />
+                <div>
+                    <p class="text-xs text-gray-400">Макс. Скорость</p>
+                    <p class="font-medium text-sm">210 км/ч</p>
                 </div>
             </div>
-
-            <div class="relative w-full md:w-[650px] h-[624px] rounded-xl overflow-hidden shadow-2xl">
-                <img src="../assets/auto/Frame 330.png" alt="S09 Comfort Plus" class="w-full h-full object-contain" />
+            <div class="flex items-center gap-2">
+                <img src="../assets/auto/ic_timer_48px.svg" alt="Разгон" class="w-6 opacity-80" />
+                <div>
+                    <p class="text-xs text-gray-400">Разгон до 100 км</p>
+                    <p class="font-medium text-sm">7.9 сек.</p>
+                </div>
             </div>
-        </section>
+            <div class="flex items-center gap-2">
+                <img src="../assets/auto/ic_local_gas_station_48px.svg" alt="Расход" class="w-6 opacity-80" />
+                <div>
+                    <p class="text-xs text-gray-400">Расход</p>
+                    <p class="font-medium text-sm">9.9 л/100 км</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <img src="../assets/auto/ic_flash_on_48px.svg" alt="Мощность" class="w-6 opacity-80" />
+                <div>
+                    <p class="text-xs text-gray-400">Мощность</p>
+                    <p class="font-medium text-sm">210 л.с.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Баннеры выгоды -->
+        <div class="space-y-2">
+            <div class="px-3 py-1.5 w-max rounded-lg bg-[#FE7600CC] text-black text-xs sm:text-sm font-medium">
+                500 000 ₽ выгоды при покупке в кредит
+            </div>
+            <div class="px-3 py-1.5 w-max rounded-lg bg-[#FE7600CC] text-black text-xs sm:text-sm font-medium">
+                350 000 ₽ выгода по трейд-ин
+            </div>
+            <div class="px-3 py-1.5 w-max rounded-lg bg-[#FE7600CC] text-black text-xs sm:text-sm font-medium">
+                Кредит от 0.01%
+            </div>
+        </div>
+
+        <!-- Цена -->
+        <div class="text-right space-y-[10px]">
+            <p class="text-sm sm:text-base md:text-[20px] line-through text-gray-500">1 408 000 ₽</p>
+            <p class="text-2xl sm:text-3xl md:text-[40px] font-medium text-white">от 552 000 ₽</p>
+            <p class="text-xs sm:text-sm md:text-[16px] font-medium text-gray-300">В кредит от 3 333₽/мес</p>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+            <button
+                class="bg-[#111214] text-[#FE7600] border border-[#FE7600] px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition hover:bg-[#1a1a1a]">
+                Обменять по Trade-in
+            </button>
+            <button
+                class="bg-[#FE7600] text-black px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition hover:bg-[#e56c00]">
+                Купить в кредит!
+            </button>
+        </div>
+    </div>
+
+    <!-- Картинка машины -->
+    <div class="w-full md:w-[650px] h-[300px] sm:h-[400px] md:h-[624px] rounded-xl overflow-hidden shadow-2xl order-1 md:order-2">
+        <img src="../assets/auto/Frame 330.png" alt="S09 Comfort Plus" class="w-full h-full object-contain" />
+    </div>
+
+</section>
 
 
-        <section>
+        <section class="mt-14 container">
             <div class="container w-full mx-auto px-[0] md:px-4 md:py-8 ">
                 <div class="flex justify-between mb-[30px] md:mb-[72px] gap-[16px] md:gap-[32px]">
                     <button id="tab-complectations"
-                        class="bg-[#13141770] w-full text-[#FE7600CC] px-[25px] md:px-4 py-[16px] md:py-[18px] text-[12px] md:text-[32px] font-medium rounded-[14px] transition-colors">
+                        class="bg-[#13141770] w-full text-[#FE7600CC] px-[25px] md:px-4 py-[16px] md:py-[14px] text-[12px] md:text-[18px] font-medium rounded-[14px] transition-colors">
                         Комплектации
                     </button>
                     <button id="tab-specs"
-                        class="bg-[#13141770] w-full text-[#FE7600CC] px-[25px]  md:px-4 py-[16px] md:py-[18px] text-[12px] md:text-[32px] font-medium rounded-[14px] transition-colors">
+                        class="bg-[#13141770] w-full text-[#FE7600CC] px-[25px]  md:px-4 py-[16px] md:py-[14px] text-[12px] md:text-[18px] font-medium rounded-[14px] transition-colors">
                         Характеристики
                     </button>
                 </div>
+                <div id="content-specs" class="content-section px-4 md:px-0">
+                    <div class="hidden md:block">
+                        <div class="flex justify-end ">
+                            <div class="flex justify-between mb-4 w-[650px]">
+                                <h2 class="text-[16px] font-medium">2.5 л. 6АКПП (180 л.с.) FWD</h2>
+                                <h2 class="text-[16px] font-medium">2.0 л. 6АКПП (150 л.с.) FWD</h2>
+                            </div>
+                        </div>
+                        <h2 class="text-[16px] font-medium mt-4 mb-3">Кузов</h2>
 
-<div id="content-specs" class="bg-black text-white font-sans">
-  <!-- Заголовки модификаций (для десктопа) -->
-  <div class="hidden md:flex justify-center mb-6 text-sm font-medium text-gray-300">
-    <div class="mx-4">2.5 л. 6АКПП (180 л.с.) FWD</div>
-    <div class="mx-4">2.0 л. 6АКПП (150 л.с.) FWD</div>
-  </div>
+                        <table class="w-full border-collapse">
+                            <tbody>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] w-[400px] font-light">Объем двигателя, л</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">2.5</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">2.0</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] w-[400px] font-light">Рабочий объем двигателя, см³
+                                    </td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">2497</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">1999</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] w-[400px] font-light">Тип привода</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">Передний</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">Передний</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] w-[400px] font-light">Мощность, л.с.</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">180</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">150</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-  <!-- Двигатель -->
-  <div class="mb-6">
-    <h3 class="text-xl font-bold mb-4">Двигатель</h3>
+                        <h2 class="text-[16px] font-medium mt-4 mb-3">Кузов</h2>
+                        <table class="w-full border-collapse">
+                            <tbody>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] w-[400px] font-light">Длина</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">1860</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">1860</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] w-[400px] font-light">Ширина</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">1465</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">1465</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-    <!-- Модификация 1 (2.5л) -->
-    <div class="md:block hidden">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-        <div class="col-span-1">
-          <div class="py-4 text-sm">Объем двигателя, л</div>
-          <div class="py-4 text-sm">Рабочий объем двигателя, см³</div>
-          <div class="py-4 text-sm">Тип привода</div>
-          <div class="py-4 text-sm">Мощность, л.с.</div>
-        </div>
-        <div class="col-span-1 text-center">
-          <div class="py-4">2.5</div>
-          <div class="py-4">2497</div>
-          <div class="py-4">Передний</div>
-          <div class="py-4">180</div>
-        </div>
-        <div class="col-span-1 text-center">
-          <div class="py-4">2</div>
-          <div class="py-4">1999</div>
-          <div class="py-4">Передний</div>
-          <div class="py-4">150</div>
-        </div>
-      </div>
-    </div>
+                        <h2 class="text-[16px] font-medium mt-4 mb-3">Эксплуатационные показатели</h2>
+                        <table class="w-full border-collapse">
+                            <tbody>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] font-light w-[400px]">Расход топлива в городе,
+                                        л/100 км</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">11.4</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">10.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] font-light">Расход топлива на трассе, л/100 км</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">5.5</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">6.0</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-[13px] font-light">Смешанный расход топлива, л/100 км</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">7.7</td>
+                                    <td class="px-4 py-2 text-[13px] font-light text-right">7.8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <!-- Модификация 1 (на мобильных) -->
-    <div class="md:hidden">
-      <button 
-        type="button"
-        class="w-full flex justify-between items-center px-4 py-3 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-200 border-b border-gray-700"
-        onclick="toggleSpecs('mod1')"
-      >
-        <span class="font-semibold text-lg">2.5 л. 6АКПП (180 л.с.) FWD</span>
-        <svg 
-          id="arrow-mod1" 
-          class="w-5 h-5 transform transition-transform duration-300" 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </button>
-      <div id="mod1" class="hidden mt-4 space-y-3">
-        <div class="flex justify-between">
-          <span class="text-sm">Объем двигателя, л</span>
-          <span class="text-right">2.5</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-sm">Рабочий объем двигателя, см³</span>
-          <span class="text-right">2497</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-sm">Тип привода</span>
-          <span class="text-right">Передний</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-sm">Мощность, л.с.</span>
-          <span class="text-right">180</span>
-        </div>
-      </div>
-    </div>
-  </div>
+                    <!-- Мобильная версия -->
+                    <div class="md:hidden">
+                        <details class="w-full mb-4">
+                            <summary class="flex justify-between items-center p-2 rounded-md cursor-pointer">
+                                <span class="font-medium text-[13px]">2.5 л. 6АКПП (180 л.с.) FWD</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </summary>
+                            <div class="mt-2">
+                                <h2 class="text-[13px] font-medium mb-2">Двигатель</h2>
+                                <table class="w-full border-collapse">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Объем двигателя, л</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">2.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Рабочий объем двигателя, см³
+                                            </td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">2497</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Тип привода</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">Передний</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Мощность, л.с.</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">180</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-  <!-- Кузов -->
-  <div class="mb-6">
-    <h3 class="text-xl font-bold mb-4">Кузов</h3>
+                                <h2 class="text-[13px] font-medium mt-4 mb-2">Кузов</h2>
+                                <table class="w-full border-collapse">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Длина</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">1860</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Ширина</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">1465</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-    <!-- Кузов на десктопе -->
-    <div class="md:block hidden">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-        <div class="col-span-1">
-          <div class="py-4 text-sm">Длина</div>
-          <div class="py-4 text-sm">Ширина</div>
-        </div>
-        <div class="col-span-1 text-center">
-          <div class="py-4">1860</div>
-          <div class="py-4">1465</div>
-        </div>
-        <div class="col-span-1 text-center">
-          <div class="py-4">1860</div>
-          <div class="py-4">1465</div>
-        </div>
-      </div>
-    </div>
+                                <h2 class="text-[13px] font-medium mt-4 mb-2">Эксплуатационные показатели</h2>
+                                <table class="w-full border-collapse">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Расход топлива в городе, л/100
+                                                км</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">11.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Расход топлива на трассе, л/100
+                                                км</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">5.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Смешанный расход топлива, л/100
+                                                км</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">7.7</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
 
-    <!-- Кузов на мобильных -->
-    <div class="md:hidden">
-      <button 
-        type="button"
-        class="w-full flex justify-between items-center px-4 py-3 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-200 border-b border-gray-700"
-        onclick="toggleSpecs('mod2')"
-      >
-        <span class="font-semibold text-lg">2.0 л. 6АКПП (150 л.с.) FWD</span>
-        <svg 
-          id="arrow-mod2" 
-          class="w-5 h-5 transform transition-transform duration-300" 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </button>
-      <div id="mod2" class="hidden mt-4 space-y-3">
-        <div class="flex justify-between">
-          <span class="text-sm">Длина</span>
-          <span class="text-right">1860</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-sm">Ширина</span>
-          <span class="text-right">1465</span>
-        </div>
-      </div>
-    </div>
-  </div>
+                        <details class="w-full mb-4">
+                            <summary class="flex justify-between items-center p-2 rounded-md cursor-pointer">
+                                <span class="font-medium text-[13px]">2.0 л. 6АКПП (150 л.с.) FWD</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </summary>
+                            <div class="mt-2">
+                                <h2 class="text-[13px] font-medium mb-2">Двигатель</h2>
+                                <table class="w-full border-collapse">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Объем двигателя, л</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">2.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Рабочий объем двигателя, см³
+                                            </td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">1999</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Тип привода</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">Передний</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Мощность, л.с.</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">150</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-  <!-- Подробнее -->
-  <div class="mt-4">
-    <a href="#" class="text-orange-500 hover:text-orange-400 transition-colors duration-200 font-medium text-sm">
-      Подробнее
-    </a>
-  </div>
-</div>
+                                <h2 class="text-[13px] font-medium mt-4 mb-2">Кузов</h2>
+                                <table class="w-full border-collapse">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Длина</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">1860</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Ширина</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">1465</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-<script>
-  function toggleSpecs(id) {
-    const content = document.getElementById(id);
-    const arrow = document.getElementById(`arrow-${id}`);
-    
-    if (content.classList.contains('hidden')) {
-      content.classList.remove('hidden');
-      arrow.style.transform = 'rotate(180deg)';
-    } else {
-      content.classList.add('hidden');
-      arrow.style.transform = 'rotate(0deg)';
-    }
-  }
+                                <h2 class="text-[13px] font-medium mt-4 mb-2">Эксплуатационные показатели</h2>
+                                <table class="w-full border-collapse">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Расход топлива в городе, л/100
+                                                км</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">10.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Расход топлива на трассе, л/100
+                                                км</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">6.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-[13px] font-light">Смешанный расход топлива, л/100
+                                                км</td>
+                                            <td class="px-4 py-2 text-[13px] font-light text-right">7.8</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </div>
+                </div>
 
-  // По умолчанию показываем оба блока на мобильных
-  window.onload = () => {
-    // Показать только первые блоки при загрузке
-    // Можно изменить на нужное поведение
-  };
-</script>
 
-<script>
-  function toggleSpecs(id) {
-    const content = document.getElementById(id);
-    const arrow = document.getElementById(`arrow-${id}`);
-    
-    if (content.classList.contains('hidden')) {
-      content.classList.remove('hidden');
-      arrow.style.transform = 'rotate(180deg)';
-    } else {
-      content.classList.add('hidden');
-      arrow.style.transform = 'rotate(0deg)';
-    }
-  }
 
-  // По умолчанию показываем первую модификацию
-  window.onload = () => {
-    toggleSpecs('mod1');
-  };
-</script>
 
-                <div id="content-complectations" class="content-section  hidden">
-                    <div class=" w-full">
-                        <div class=" mx-auto md:px-4 py-8 space-y-10">
+                <div id="content-complectations" class="content-section hidden">
+                    <div class="w-full">
+                        <div class="mx-auto md:px-4 py-6 space-y-6">
 
-                            <div>
+                            <div >
                                 <h2
-                                    class="text-xl md:text-4xl font-medium mb-6 text-[#FE7600CC] text-center md:text-left">
+                                    class="text-lg md:text-[24px] font-medium mb-4 text-[#FE7600CC] text-center md:text-left">
                                     2.5 л. 6АКПП (180 л.с.) FWD
                                 </h2>
 
-                                <details class="w-full group space-y-6 col-span-5">
+                                <details class="w-full group space-y-4 col-span-5">
                                     <summary class="list-none">
                                         <div
-                                            class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
-                                            <div class="flex items-center justify-center md:justify-start gap-4">
-                                                <span class="font-semibold text-xl text-white">Active Plus New</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            class="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 items-center border border-[#FE7600] bg-[#13141770] p-3 md:p-5 rounded-[24px] cursor-pointer">
+                                            <div class="flex items-center justify-center md:justify-start gap-3">
+                                                <span class="font-semibold text-sm text-white">Active Plus New</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                     class="transition-transform duration-300 group-open:rotate-180">
@@ -421,40 +498,39 @@
 
                                             <div class="text-right">
                                                 <span
-                                                    class="line-through text-xl text-gray-300 hidden md:block text-center">1
+                                                    class="line-through text-sm text-gray-300 hidden md:block text-center">1
                                                     489 000 ₽</span>
                                             </div>
 
                                             <div class="flex justify-center md:justify-start">
                                                 <span
-                                                    class="text-[#FE7600CC] font-medium text-xl flex items-center gap-2">
-                                                    <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
+                                                    class="text-[#FE7600CC] font-medium text-sm flex items-center gap-1">
+                                                    <span class="md:hidden line-through text-gray-400 text-xs">1 489 000
                                                         ₽</span>
                                                     от 633 000 ₽
                                                 </span>
                                             </div>
 
                                             <div class="text-center md:text-left">
-                                                <span class="text-white text-xl md:text-base showCreaditpopup">В кредит
-                                                    от 7 806 ₽/мес.</span>
+                                                <span class="text-white text-sm md:text-xs showCreaditpopup">В кредит от
+                                                    7 806 ₽/мес.</span>
                                             </div>
 
                                             <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
                                                 <button data-toggle-timer-container="Credit"
-                                                    class="flex-1 max-w-[140px] bg-[#FE7600CC] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
+                                                    class="flex-1 max-w-[120px] bg-[#FE7600CC] text-white py-2 rounded-[20px] showCreaditpopup font-medium text-xs credit-button">
                                                     В кредит
                                                 </button>
                                                 <button data-toggle-timer-container="Trade-in"
-                                                    class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#FE7600CC] font-medium text-sm">
+                                                    class="flex-1 max-w-[120px] bg-[#25262A] py-2 rounded-[20px] text-[#FE7600CC] font-medium text-xs">
                                                     <a>Trade-in</a>
                                                 </button>
                                             </div>
-
                                         </div>
                                     </summary>
 
-                                    <div class="bg-[#13141770] rounded-[32px] p-4 md:p-[40px] mt-[-1px]">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-300">
+                                    <div class="bg-[#13141770] rounded-[24px] p-3 md:p-5 mt-[-1px]">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 text-xs text-gray-300">
                                             <div><strong class="text-white">Безопасность:</strong></div>
                                             <div></div>
                                             <div>• Подушка безопасности водителя</div>
@@ -464,14 +540,14 @@
                                             <div>• Антиблокировочная система (ABS)</div>
                                             <div>• ISOFIX</div>
 
-                                            <div class="mt-4"><strong class="text-white">Комфорт:</strong></div>
+                                            <div class="mt-3"><strong class="text-white">Комфорт:</strong></div>
                                             <div></div>
                                             <div>• Климат-контроль</div>
                                             <div>• Мультимедиа с экраном</div>
                                             <div>• Подогрев сидений</div>
                                             <div>• Электропакет</div>
 
-                                            <div class="mt-4"><strong class="text-white">Экстерьер:</strong></div>
+                                            <div class="mt-3"><strong class="text-white">Экстерьер:</strong></div>
                                             <div></div>
                                             <div>• Противотуманные фары</div>
                                             <div>• Светодиодные фары</div>
@@ -482,13 +558,13 @@
                                 </details>
                             </div>
 
-                            <details class="w-full group space-y-6 col-span-5">
+                            <details class="w-full group space-y-4 col-span-5">
                                 <summary class="list-none">
                                     <div
-                                        class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
-                                        <div class="flex items-center justify-center md:justify-start gap-4">
-                                            <span class="font-semibold text-xl text-white">Premium</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        class="grid grid-cols-1 md:grid-cols-5 gap-3 border border-[#FE7600] md:gap-4 items-center bg-[#13141770] p-3 md:p-5 rounded-[24px] cursor-pointer">
+                                        <div class="flex items-center justify-center md:justify-start gap-3">
+                                            <span class="font-semibold text-sm text-white">Premium</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="transition-transform duration-300 group-open:rotate-180">
@@ -498,39 +574,38 @@
 
                                         <div class="text-right">
                                             <span
-                                                class="line-through text-xl text-gray-300 hidden md:block text-center">1
+                                                class="line-through text-sm text-gray-300 hidden md:block text-center">1
                                                 489 000 ₽</span>
                                         </div>
 
                                         <div class="flex justify-center md:justify-start">
-                                            <span class="text-[#FE7600CC] font-medium text-xl flex items-center gap-2">
-                                                <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
+                                            <span class="text-[#FE7600CC] font-medium text-sm flex items-center gap-1">
+                                                <span class="md:hidden line-through text-gray-400 text-xs">1 489 000
                                                     ₽</span>
                                                 от 633 000 ₽
                                             </span>
                                         </div>
 
                                         <div class="text-center md:text-left">
-                                            <span class="text-white text-xl md:text-base showCreaditpopup">В кредит
-                                                от 7 806 ₽/мес.</span>
+                                            <span class="text-white text-sm md:text-xs showCreaditpopup">В кредит от 7
+                                                806 ₽/мес.</span>
                                         </div>
 
                                         <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
                                             <button data-toggle-timer-container="Credit"
-                                                class="flex-1 max-w-[140px] bg-[#FE7600CC] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
+                                                class="flex-1 max-w-[120px] bg-[#FE7600CC] text-white py-2 rounded-[20px] showCreaditpopup font-medium text-xs credit-button">
                                                 В кредит
                                             </button>
                                             <button data-toggle-timer-container="Trade-in"
-                                                class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#FE7600CC] font-medium text-sm">
+                                                class="flex-1 max-w-[120px] bg-[#25262A] py-2 rounded-[20px] text-[#FE7600CC] font-medium text-xs">
                                                 <a>Trade-in</a>
                                             </button>
                                         </div>
-
                                     </div>
                                 </summary>
 
-                                <div class="bg-[#13141770] rounded-[32px] p-4 md:p-[40px] mt-[-1px]">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-300">
+                                <div class="bg-[#13141770] rounded-[24px] p-3 md:p-5 mt-[-1px]">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 text-xs text-gray-300">
                                         <div><strong class="text-white">Безопасность:</strong></div>
                                         <div></div>
                                         <div>• Подушка безопасности водителя</div>
@@ -540,14 +615,14 @@
                                         <div>• Антиблокировочная система (ABS)</div>
                                         <div>• ISOFIX</div>
 
-                                        <div class="mt-4"><strong class="text-white">Комфорт:</strong></div>
+                                        <div class="mt-3"><strong class="text-white">Комфорт:</strong></div>
                                         <div></div>
                                         <div>• Климат-контроль</div>
                                         <div>• Мультимедиа с экраном</div>
                                         <div>• Подогрев сидений</div>
                                         <div>• Электропакет</div>
 
-                                        <div class="mt-4"><strong class="text-white">Экстерьер:</strong></div>
+                                        <div class="mt-3"><strong class="text-white">Экстерьер:</strong></div>
                                         <div></div>
                                         <div>• Противотуманные фары</div>
                                         <div>• Светодиодные фары</div>
@@ -632,45 +707,40 @@
             </div>
         </section>
 
- <div class="container mx-auto px-4 py-8">
+        <div class="container mx-auto px-4 py-8">
+            <h1
+                class="font-regular text-[18px] md:text-[40px] font-medium text-white mb-6 md:mb-8 text-center md:text-left">
+                Получи кэшбэк при оплате Альфа картой
+            </h1>
 
-    <!-- Заголовок -->
-    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">
-      Получи кэшбэк при оплате Альфа картой
-    </h1>
+            <div class="relative rounded-2xl overflow-hidden bg-cover bg-center h-60 sm:h-72 md:h-80 lg:h-96 xl:h-[500px] flex items-center justify-center"
+                style="background-image: url('../assets/auto/cashBackCar.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-    <!-- Основной блок с фоном -->
-    <div 
-      class="relative rounded-2xl overflow-hidden bg-cover bg-center h-96 md:h-[500px] flex items-center justify-center"
-      style="background-image: url('../assets/auto/cashBackCar.jpg');"
-    >
-      <!-- Полупрозрачный чёрный оверлей -->
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div
+                    class="relative z-10 text-center px-4 sm:px-6 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl mx-auto">
+                    <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-4 md:mb-6">
+                        При оплате автомобиля SOUEAST картой Альфа-Банка<br class="hidden sm:block" />
+                        от 500 000 рублей получите кешбэк 100 000 рублей*
+                    </p>
+                    <p class="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6">
+                        Суммируется со всеми спецпредложениями и акциями!
+                    </p>
+                    <p class="text-xs sm:text-sm md:text-base leading-relaxed">
+                        Распространяется на неограниченное количество<br class="hidden sm:block" />
+                        приобретаемых автомобилей!
+                    </p>
 
-      <!-- Контент -->
-      <div class="relative z-10 text-center px-6 max-w-3xl">
-        <p class="text-lg md:text-xl leading-relaxed mb-6">
-          При оплате автомобиля SOUEAST картой Альфа-Банка<br />
-          от 500 000 рублей получите кешбэк 100 000 рублей*
-        </p>
-        <p class="text-lg md:text-xl mb-6">Суммируется со всеми спецпредложениями и акциями!</p>
-        <p class="text-lg md:text-xl leading-relaxed">
-          Распространяется на неограниченное количество<br />
-          приобретаемых автомобилей!
-        </p>
-
-        <!-- Кнопка -->
-        <a href="#" class="inline-block w-full mt-6 px-10 py-3 bg-[#FE7600] hover-bg-orange text-black font-medium text-lg rounded-lg transition-colors duration-300">
-          Получить кэшбек!
-        </a>
-      </div>
-    </div>
-
-  </div>
+                    <a href="#"
+                        class="inline-block w-full mt-4 sm:mt-6 px-6 py-2 sm:px-8 sm:py-3 bg-[#FE7600] hover:bg-orange-600 text-black font-medium text-xs sm:text-sm md:text-base rounded-lg transition-colors duration-300">
+                        Получить кэшбек!
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <section class="py-12 bg-black">
             <div class="container w-[335px] md:w-full mx-auto px-4">
-                <!-- Заголовок -->
                 <h2
                     class="font-regular text-[18px] md:text-[40px] font-medium text-white mb-6 md:mb-8 text-center md:text-left">
                     Обменяйте свой автомобиль на новый SOUEAST!
@@ -678,21 +748,17 @@
 
                 <div
                     class="flex flex-col md:flex-row gap-6 items-center bg-[#111214] rounded-2xl overflow-hidden shadow-xl">
-                    <!-- Левая часть: Изображение -->
                     <div class="w-full md:w-1/2 relative">
                         <img src="../assets/womenNearCar.png" alt="Женщина у автомобиля SOUEAST S09"
                             class="w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-                        <!-- Кнопка по центру на мобильных -->
                         <button
                             class="absolute bottom-6 left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0 text-[14px] md:text-[16px] w-[90%] md:w-[480px] max-w-[480px] bg-orange-500 hover:bg-orange-600 text-black font-medium py-3 rounded-lg transition duration-200 z-10 hover:scale-105">
                             Получить оценку своего авто
                         </button>
                     </div>
 
-                    <!-- Правая часть: Аккордеоны -->
                     <div class="w-full md:w-1/2 p-4 md:p-6 bg-[#111214]">
-                        <!-- Аккордеон 1 -->
                         <div class="mb-4 border-b border-gray-700 pb-3 group">
                             <button
                                 class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
@@ -711,7 +777,6 @@
                             </div>
                         </div>
 
-                        <!-- Аккордеон 2 -->
                         <div class="mb-4 border-b border-gray-700 pb-3 group">
                             <button
                                 class="flex justify-between items-center w-full text-left text-white font-medium text-base md:text-lg py-2 transition-colors duration-200 hover:text-orange-500 focus:outline-none"
@@ -754,11 +819,222 @@
         </section>
     </main>
 
+
+    <footer class="bg-[#0a0a0a] text-white py-12">
+        <div class="container mx-auto px-4">
+
+            <!-- Логотип и слоган -->
+            <div class="flex items-center mb-12">
+                <img src="../assets/logo.svg" alt="SOUEAST Logo" class="w-64 h-auto">
+                <div class="ml-8 border-l border-gray-700 pl-8">
+                    <span class="text-white font-medium">Независимость</span>
+                </div>
+            </div>
+
+            <!-- Десктоп: три колонки -->
+            <div class="hidden md:flex justify-between gap-12 mb-12">
+                <!-- Колонка 1: Модели -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Модели</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-orange-500 hover:text-orange-400 transition duration-200">S09</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">S07</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">S06</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 2: Покупателям -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Покупателям</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Автомобили в
+                                наличии</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Онлайн-оценка</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-white transition duration-200">Спецпредложения</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Социальная
+                                программа</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Корпоративным
+                                клиентам</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Запись на
+                                тест-драйв</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 3: О сервисе -->
+                <div class="w-[180px]">
+                    <h3 class="text-lg font-semibold mb-6">О сервисе</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">История
+                                SOUEAST</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Экотехнологии</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Новости</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Мобильная версия: раскрывающиеся меню -->
+            <div class="md:hidden mt-8">
+                <div class="space-y-4">
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('models')">
+                            Модели
+                            <svg id="models-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="models-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S09</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S07</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S06</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('buyers')">
+                            Покупателям
+                            <svg id="buyers-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="buyers-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Автомобили
+                                в наличии</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Онлайн-оценка</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Спецпредложения</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Социальная
+                                программа</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Корпоративным
+                                клиентам</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Запись на
+                                тест-драйв</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('service')">
+                            О сервисе
+                            <svg id="service-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="service-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">История
+                                SOUEAST</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Экотехнологии</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Новости</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Копирайт -->
+                <div class="text-gray-400 text-xs mt-8  pt-4">
+                    © 2025, ООО «ИМПЕРИЯ», ИНН 773065345<br>
+                    ОГРН 111774683794
+                </div>
+            </div>
+
+            <!-- Подпись (условия) -->
+            <div class="text-gray-400 text-[12px] leading-relaxed mb-8">
+                Производитель сохраняет за собой исключительное право в любое время вносить дополнения, изменения,
+                обновления в информацию о параметрах продукта, конфигурации, материалы, цвета и в другую информацию о
+                транспортном средстве без предварительного уведомления. Приобретение любой продукции бренда SOUEAST
+                осуществляется в соответствии с условиями индивидуального договора купли-продажи. Представленное
+                изображение, цвет, технические характеристики и комплектация автомобилей могут отличаться от
+                реализуемого. Упоминаемое оборудование может быть опциональным. Для получения подробной информации об
+                актуальных ценах на продукцию SOUEAST и наличии автомобилей обращайтесь к официальным дилерам. Не
+                является публичной офертой.
+            </div>
+
+            <div class="border-t border-gray-700 mb-8"></div>
+
+            <!-- Нижняя часть: Ссылки и соцсети -->
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-center space-y-6 md:space-y-0 ">
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-center md:text-left">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Политика
+                        конфиденциальности</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Cookies</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Контакты</a>
+                </div>
+            </div>
+
+            <div class=" mt-8"></div>
+
+
+        </div>
+    </footer>
+
     <script src="../script/components/slider/CreditSlider.js"></script>
     <script src="../script/components/navigation/Tabs.js"></script>
     <script src="../script/components/Toggle/toggleList.js"></script>
     <script src="../script/components/slider/charaptersSlider.js"></script>
 
+    <script src="../script/components/navigation/footerMenu.js"></script>
+
+
+    <script>
+        function toggleSpecs(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById(`arrow-${id}`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // По умолчанию показываем оба блока на мобильных
+        window.onload = () => {
+            // Показать только первые блоки при загрузке
+            // Можно изменить на нужное поведение
+        };
+    </script>
+
+    <script>
+        function toggleSpecs(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById(`arrow-${id}`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // По умолчанию показываем первую модификацию
+        window.onload = () => {
+            toggleSpecs('mod1');
+        };
+    </script>
 </body>
 
 </html>
