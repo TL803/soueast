@@ -17,24 +17,30 @@ function showElement(element) {
 
 function setActiveButton(button) {
   if (!button) return;
-  button.classList.remove("border-[#FE7600CC]", "text-white");
-  button.classList.add("bg-[#13141770]", "text-[#FE7600CC]");
+  button.classList.remove(
+    "border", "border-[#FE7600]", "text-white", "bg-transparent"
+  );
+  button.classList.add(
+    "bg-[#FE7600]", "text-black", "font-semibold"
+  );
 }
 
 function setInactiveButton(button) {
   if (!button) return;
-  button.classList.remove("bg-[#13141770]", "text-[#FE7600CC]");
-  button.classList.add("border-[#FE7600CC]", "text-white");
+  button.classList.remove("bg-[#FE7600]", "text-black", "font-semibold", "bg-[#111214]");
+  button.classList.add(
+    "bg-[#111214]", "border", "border-[#FE7600]", "text-[#FE7600]", "bg-[#111214]"
+  );
 }
 
 function showTab(tabId) {
   const { tabSpecsBtn, tabComplectationsBtn, contentSpecs, contentComplectations } = getTabElements();
 
-  setInactiveButton(tabSpecsBtn);
-  setInactiveButton(tabComplectationsBtn);
-
   hideElement(contentSpecs);
   hideElement(contentComplectations);
+
+  setInactiveButton(tabSpecsBtn);
+  setInactiveButton(tabComplectationsBtn);
 
   if (tabId === "specs" && contentSpecs) {
     setActiveButton(tabSpecsBtn);
