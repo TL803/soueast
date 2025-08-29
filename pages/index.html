@@ -12,6 +12,7 @@
     <!-- Подключаем Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style/sliderStyles.css">
+    <link rel="stylesheet" href="../style/style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -25,24 +26,14 @@
                         sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif']
                     },
                     screens: {
-                        'sm': '640px',
-                        'md': '1400px',
-                        'lg': '1920px',
-                        'xl': '2100px',
-                        '2xl': '2500px'
+                        'md': '1441px',
                     },
-                    container: {
-                        center: true,
-                        padding: '2rem',
-                        screens: {
-                            '2xl': '1440px'
-                        }
-                    },
-                    fontSize: {
-                        'mobile-h1': ['32px', { lineHeight: '40px' }],
-                        'desktop-h1': ['48px', { lineHeight: '60px' }],
-                        'xxl-h1': ['64px', { lineHeight: '80px' }]
-                    },
+
+                    // fontSize: {
+                    //     'mobile-h1': ['32px', { lineHeight: '40px' }],
+                    //     'desktop-h1': ['48px', { lineHeight: '60px' }],
+                    //     'xxl-h1': ['64px', { lineHeight: '80px' }]
+                    // },
                     spacing: {
                         '128': '32rem',
                         '160': '40rem',
@@ -329,7 +320,7 @@
         <section class="py-12 bg-black">
             <div class="container w-[355px] md:w-full mx-auto px-4">
                 <!-- Заголовок -->
-                <h2 class="text-[36px] sm:text-[40px] font-medium text-white mb-6 text-center md:text-start">Кредит от
+                <h2 class="text-[24px] md:text-[36px] font-medium text-white mb-6 text-start">Кредит от
                     0.01%</h2>
 
                 <!-- Карточка -->
@@ -347,7 +338,7 @@
 
                             <!-- Шаг 1: Выберите авто -->
                             <div class="space-y-4">
-                                <p class="text-[18px] sm:text-[20px] font-medium text-white">1. Выберите авто</p>
+                                <p class="text-[14px] md:text-[18px] font-medium text-white">1. Выберите авто</p>
 
                                 <!-- Выбор модели -->
                                 <div class="relative">
@@ -384,7 +375,7 @@
 
                             <!-- Шаг 2: Первоначальный взнос -->
                             <div class="space-y-4">
-                                <p class="text-[18px] sm:text-[20px] font-medium text-white">2. Введите сумму
+                                <p class="text-[14px] md:text-[18px]  font-medium text-white">2. Введите сумму
                                     первоначального взноса</p>
                                 <input type="range" id="initialPaymentSlider" min="0" max="1000000" step="50000"
                                     value="500000" class="w-full h-6 slider bg-gray-700 rounded-full" />
@@ -392,24 +383,24 @@
                                 <div class="flex justify-between mt-3 space-x-4">
                                     <div class="text-center flex-1">
                                         <div id="initialPercentValue"
-                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            class="text-white text-[14px] md:text-[18px]  font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
                                             10%
                                         </div>
-                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Процент</p>
+                                        <p class="text-[12px]  mt-1 text-gray-400">Процент</p>
                                     </div>
                                     <div class="text-center flex-1">
                                         <div id="initialPaymentValue"
-                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            class="text-white text-[14px] md:text-[18px]  font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
                                             500 000 ₽
                                         </div>
-                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Сумма</p>
+                                        <p class="text-[12px]  mt-1 text-gray-400">Сумма</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Шаг 3: Срок кредита и платёж -->
                             <div class="space-y-4">
-                                <p class="text-[18px] sm:text-[20px] font-medium text-white">3. Выберите комфортный
+                                <p class="text-[14px] md:text-[18px]  font-medium text-white">3. Выберите комфортный
                                     платёж</p>
                                 <input type="range" id="loanTermSlider" min="1" max="8" step="1" value="8"
                                     class="w-full h-6 slider bg-gray-700 rounded-full" />
@@ -417,24 +408,24 @@
                                 <div class="flex justify-between mt-3 space-x-4">
                                     <div class="text-center flex-1">
                                         <div id="loanTermValue"
-                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            class="text-white text-[18px]  font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
                                             8 лет
                                         </div>
-                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Срок кредита</p>
+                                        <p class="text-[12px]  mt-1 text-gray-400">Срок кредита</p>
                                     </div>
                                     <div class="text-center flex-1">
                                         <div id="monthlyPaymentValue"
-                                            class="text-white text-[18px] sm:text-[20px] font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
+                                            class="text-white text-[18px]  font-medium border border-[#3c3c3e] px-[20px] py-[10px] rounded-md w-full">
                                             80 000 ₽
                                         </div>
-                                        <p class="text-[12px] sm:text-[14px] mt-1 text-gray-400">Ежемесячный платёж</p>
+                                        <p class="text-[12px]  mt-1 text-gray-400">Ежемесячный платёж</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Кнопка -->
                             <button
-                                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg sm:text-xl py-3 px-6 rounded-lg transition duration-200 mt-6">
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium text-lg  py-3 px-6 rounded-lg transition duration-200 mt-6">
                                 Рассчитать
                             </button>
                         </div>
@@ -655,7 +646,7 @@
                     <div class="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae548079d84e22e0ce482be3969ed695a5165564027de6591218c0ab98beaaf00&amp;source=constructor"
-                            class="w-full h-64 md:h-80 lg:h-[500px]" frameborder="0" allowfullscreen="" loading="lazy"
+                            class="w-full h-64 md:h-80 " frameborder="0" allowfullscreen="" loading="lazy"
                             title="Карта проезда к дилерскому центру SOUEAST">
                         </iframe>
                     </div>

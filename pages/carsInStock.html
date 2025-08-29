@@ -9,9 +9,10 @@
     <!-- Подключаем шрифт Montserrat от Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Подключаем Tailwind CSS через CDN -->
+    <!-- Подключаем Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style/sliderStyles.css">
+    <link rel="stylesheet" href="../style/style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -19,42 +20,48 @@
                     colors: {
                         primary: '#0066cc',
                         customGray: '#1a1a1a',
-                        lightGray: '#333333',
-                        'orange-accent': '#FE7600',
-                        'orange-accent-light': '#FE7600CC',
+                        lightGray: '#333333'
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif']
                     },
                     screens: {
-                        'sm': '640px',
-                        'md': '1400px',
-                        'lg': '1920px',
-                        'xl': '2100px',
-                        '2xl': '2500px'
+                        'md': '1441px',
                     },
-                    container: {
-                        center: true,
-                        padding: '1rem',
-                        screens: {
-                            '2xl': '1440px'
-                        }
+
+                    // fontSize: {
+                    //     'mobile-h1': ['32px', { lineHeight: '40px' }],
+                    //     'desktop-h1': ['48px', { lineHeight: '60px' }],
+                    //     'xxl-h1': ['64px', { lineHeight: '80px' }]
+                    // },
+                    spacing: {
+                        '128': '32rem',
+                        '160': '40rem',
+                        '192': '48rem'
                     }
                 }
             }
         }
     </script>
-
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
+        .banner-section {
+            background: url('../assets/banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .banner-section {
+                background: #000000;
+            }
         }
     </style>
 </head>
 
 <body class="bg-black text-white font-sans">
     <header class="w-full">
-        <!-- Верхняя строка (только десктоп) -->
         <div class="header-top py-[20px] md:flex hidden">
             <div class="container mx-auto flex justify-between items-center px-4">
                 <div class="flex items-center space-x-[16px]">
@@ -111,7 +118,7 @@
         </div>
 
         <div class="md:hidden flex justify-between items-center p-4 bg-black text-white">
-            <img src="../assets/logo.svg" alt="Логотип" class="h-6">
+            <img src="../assets/logo.svg" alt="Логотип" >
             <div class="flex items-center space-x-4">
                 <a href="tel:+74992298999" class="text-orange-500 hover:text-orange-400 transition">
                     <img src="../assets/phone.svg" alt="Телефон" class="w-6 h-6">
@@ -143,36 +150,47 @@
     <main class="mb-[40px]">
         <section>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-                <h2 class="text-[48px] font-medium mt-[35px] mb-[52px]">Автомобили в наличии</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 justify-items-center"
+                <h2 class="text-[24px] md:text-[48px] font-medium mt-[35px] mb-[52px]">Автомобили в наличии</h2>
+                <div class="grid  md:grid-cols-3 gap-8 md:gap-10 justify-items-center"
                     data-container="cars">
                 </div>
             </div>
         </section>
 
 
-        <div class="relative w-full container mx-auto">
-            <div class=" rounded-xl shadow-lg overflow-hidden relative bg-cover"
-                style="background-image: url(../assets/soueast.png); background-position: center">
+        <div class="relative w-full mx-auto container">
+            <div class="h-[506px] md:h-[360px] change-bg-size max-sm:rounded-[12px] max-sm:mx-auto
+              rounded-xl shadow-lg overflow-hidden relative bg-cover"
+                style=" background-position: center">
+
                 <div class="absolute inset-0 flex items-center justify-center z-0">
-                    <div class="logo"></div>
+                    <div class="logo opacity-20"></div>
                 </div>
 
-                <div class="relative z-10 p-8 md:p-12 text-white">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Выгода до 350 000 ₽</h2>
-                    <p class="text-white mb-6 leading-relaxed">
+                <div class=" z-10 
+                absolute bottom-0 left-0 max-sm:p-6 
+                p-8 md:p-12 
+                text-white">
+                    <h2 class="text-[16px]  md:text-3xl font-bold max-sm:mb-3 mb-4">
+                        Выгода до 350 000 ₽
+                    </h2>
+                    <p class="text-[12px] text-white max-sm:mb-5 mb-6 leading-relaxed">
                         Обновите свой автомобиль на выгодных условиях! При покупке нового SOUEAST вы можете сэкономить
-                        до 350 000 ₽
-                        и воспользоваться программой трейд-ин: сдавайте свой старый автомобиль, получайте честную оценку
-                        и зачёт его стоимости
-                        в покупку нового. Минимум хлопот — максимум выгоды!
+                        до 350 000 ₽ и воспользоваться программой трейд-ин: сдавайте свой старый автомобиль, получайте
+                        честную оценку
+                        и зачёт его стоимости в покупку нового. Минимум хлопот — максимум выгоды!
                     </p>
                     <a href="#"
-                        class="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-8 rounded-lg transition duration-300 text-center">
+                        class="text-[15px] px-6 py-3
+                inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold md:py-3 md:px-8 rounded-lg transition duration-300 text-center">
                         Получить оценку своего авто
                     </a>
                 </div>
-                <div class="absolute top-0 right-[100px] bg-orange-500 text-black text-sm font-medium px-4 py-2 rounded-t-none rounded-b-md">
+
+                <div class="absolute top-0 
+                right-[30px]  md:right-[100px] 
+                text-[12px] max-sm:px-3 max-sm:py-1 
+                bg-orange-500 text-black text-sm font-medium px-4 py-2 rounded-t-none rounded-b-md">
                     Trade-in
                 </div>
             </div>
@@ -181,7 +199,7 @@
 
         <section>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16 mt-[60px]">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 justify-items-center"
+                <div class="grid grid-cols-1  md:grid-cols-3 gap-8 md:gap-10 justify-items-center"
                     data-container="cars">
                 </div>
             </div>
@@ -189,17 +207,15 @@
 
 
         <div class="relative w-full  mx-auto container">
-            <!-- Баннер -->
-            <div class="relative rounded-xl overflow-hidden shadow-lg h-[303px] bg-cover bg-no-repeat"
-                style="background-image: url('../assets/partyTimeBanner.png'); background-position: center -100px;">
+            <div class="relative rounded-xl overflow-hidden shadow-lg  md:h-[303px] bg-cover bg-no-repeat bg-[right_0px_center] md:bg-[center_-100px]"
+                style="background-image: url('../assets/partyTimeBanner.png'); ">
 
-                <!-- Градиентный слой слева (для контраста текста) -->
                 <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
 
-                <!-- Текстовый блок -->
-                <div class="relative z-10 mt-[80px] p-6 md:p-8 flex items-center">
+                <div class="relative z-10 mt-[180px] md:mt-[80px] p-6 md:p-8 flex items-center">
                     <div class="text-white w-[400px] ">
-                        <h2 class="text-xl md:text-[32px] leading-[40px] font-SemiBold mb-2">Кредит от 0.01% с выгодой до 500 000 ₽</h2>
+                        <h2 class="text-xl md:text-[32px] leading-[40px] font-semiBold mb-2">Кредит от 0.01% с выгодой
+                            до 500 000 ₽</h2>
                         <a href="#"
                             class="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 md:px-8 rounded-lg transition duration-300 text-center">
                             Купить авто в кредит!
@@ -207,12 +223,14 @@
                     </div>
                 </div>
 
-                <!-- Значок "Кредит" -->
-                <div class="absolute top-0 right-[100px] bg-orange-500 text-black text-sm font-medium px-4 py-2 rounded-t-none rounded-b-md">
+                <div
+                    class="absolute top-0 right-[30px] md:right-[100px] bg-orange-500 text-black text-sm font-medium px-4 py-2 rounded-t-none rounded-b-md">
                     Кредит
                 </div>
             </div>
         </div>
+
+        
     </main>
 
     <script src="../script/components/navigation/footerMenu.js"></script>

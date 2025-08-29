@@ -1,0 +1,18 @@
+.change-bg-size {
+    background-image: url('../assets/soueast.png');
+}
+
+.container {
+    width: 1440px !important;
+}
+
+
+
+@media (max-width: 1440px) {
+    .change-bg-size {
+        background-image: url('../assets/Frame 365.png');
+    }
+        .container {
+        width: 355px !important;
+    }
+}
