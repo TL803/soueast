@@ -49,15 +49,18 @@
 .custom-checkbox-input+label::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 2px; /* Сдвигаем галочку немного правее */
     top: 0;
-    width: 35px;
-    height: 35px;
-    background: url('../assets/checkMark.svg') no-repeat center center;
+    width: 25px;
+    height: 25px;
+    background: url('../assets/galochka.svg') no-repeat center center;
     background-size: 18px 18px;
     opacity: 0;
     transition: opacity 0.2s ease;
     pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Состояние checked */
@@ -70,9 +73,29 @@
     opacity: 1;
 }
 
+/* Состояние disabled */
+.custom-checkbox-input:disabled+label {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.custom-checkbox-input:disabled+label::before {
+    border-color: #cccccc;
+    background-color: #f0f0f0;
+}
+
+/* Убираем стандартную синюю обводку в браузерах */
+.custom-checkbox-input:focus+label::before {
+    outline: none;
+}
+
+/* Альтернативный фокус без синей обводки */
+.custom-checkbox-input:focus+label::before {
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+}
 @media (max-width: 1440px) {
     .change-bg-size {
-        background-image: url('../assets/Frame 365.png');
+        background-image: url('../assets/galochka.svg');
     }
 
     .container {

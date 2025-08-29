@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyundai Solaris — Подбор и покупка</title>
+
+    <!-- Подключаем шрифт Montserrat от Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Подключаем Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/sliderStyles.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066cc',
+                        customGray: '#1a1a1a',
+                        lightGray: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    screens: {
+                        'md': '1441px',
+                    },
+
+                    // fontSize: {
+                    //     'mobile-h1': ['32px', { lineHeight: '40px' }],
+                    //     'desktop-h1': ['48px', { lineHeight: '60px' }],
+                    //     'xxl-h1': ['64px', { lineHeight: '80px' }]
+                    // },
+                    spacing: {
+                        '128': '32rem',
+                        '160': '40rem',
+                        '192': '48rem'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .banner-section {
+            background: url('../assets/banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .banner-section {
+                background: #000000;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-black text-white">
+    <header class="w-full">
+        <!-- Верхняя строка (только десктоп) -->
+        <div class="header-top py-[20px] md:flex hidden">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <div class="flex items-center space-x-[16px]">
+                    <a href="./index.html"><img src="../assets/logo.svg" alt="Логотип"></a>
+                    <span class="text-sm text-white">| НЕЗАВИСИМОСТЬ</span>
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-white">
+                    <div class="flex items-center space-x-[5px]">
+                        <img src="../assets/place.svg" alt="Местоположение" class="h-4">
+                        <span>г. Москва, Береговой проезд, 4/6, стр. 3</span>
+                    </div>
+                    <div class="flex items-center space-x-[5px]">
+                        <img src="../assets/phone.svg" alt="Телефон" class="h-4">
+                        <span>+7 (499) 229-89-99</span>
+                    </div>
+                    <div class="flex items-center space-x-[5px]">
+                        <img src="../assets/time.svg" alt="Время работы" class="h-4">
+                        <span>пн-вс, 9:00–21:00</span>
+                    </div>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-black px-[12px] py-[6px] rounded text-sm transition duration-200">
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Разделительная линия (десктоп) -->
+        <div class="w-full h-[1px] bg-[#4c4c4c] md:block hidden"></div>
+
+        <!-- Нижняя строка меню (десктоп) -->
+        <div class="header-bottom sticky top-0 z-50 bg-black md:flex hidden">
+            <div class="container mx-auto flex justify-between items-center px-4 py-4">
+                <div class="flex space-x-6">
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S09</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S07</a>
+                    <a href="#"
+                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S06</a>
+                </div>
+                <nav class="flex space-x-8">
+                    <a href="./carsInStock.html"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Автомобили
+                        в наличии</a>
+                    <a href="./tradein.html"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Trade-in</a>
+                    <a href="./loan.html"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Кредит</a>
+                    <a href="./specialization.html"
+                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Спецпредложения</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="md:hidden flex justify-between items-center p-4 bg-black text-white">
+            <img src="../assets/logo.svg" alt="Логотип">
+            <div class="flex items-center space-x-4">
+                <a href="tel:+74992298999" class="text-orange-500 hover:text-orange-400 transition">
+                    <img src="../assets/phone.svg" alt="Телефон" class="w-6 h-6">
+                </a>
+                <button id="menuToggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden bg-black text-white p-4 hidden">
+            <div class="flex flex-col space-y-4 text-lg">
+                <a href="#" class="hover:text-orange-500 transition">S09</a>
+                <a href="#" class="hover:text-orange-500 transition">S07</a>
+                <a href="#" class="hover:text-orange-500 transition">S06</a>
+                <a href="#" class="hover:text-orange-500 transition">Автомобили в наличии</a>
+                <a href="#" class="hover:text-orange-500 transition">Trade-in</a>
+                <a href="#" class="hover:text-orange-500 transition">Кредит</a>
+                <a href="#" class="hover:text-orange-500 transition">Спецпредложения</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mb-[60px] mt-[60px]">
+        <section class="container mx-auto px-6 py-12 md:py-16 bg-black text-white">
+            <div class=" mx-auto">
+
+                <!-- Заголовок -->
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                    Независимость – официальный дилер SOUEAST
+                </h1>
+
+                <!-- Первый абзац -->
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    Автоцентр «Независимость» — официальный дилер SOUEAST в Москве. Мы работаем для тех, кто выбирает
+                    современный автомобильный бренд, достойный качества и честного подхода.
+                </p>
+
+                <!-- Подзаголовок "Наша история" -->
+                <h2 class="text-xl font-semibold mb-4">Наша история</h2>
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    Компания «Независимость» появилась на рынке автомобильных продаж, чтобы предложить клиентам новые
+                    стандарты обслуживания. Мы объединили опыт экспертов, надёжные партнёрские программы и лучшие
+                    условия для покупки автомобилей SOUEAST. С самого первого дня мы придерживаемся простого принципа:
+                    каждый клиент должен чувствовать уверенность в своём выборе.
+                </p>
+
+                <!-- Подзаголовок "Миссия" -->
+                <h2 class="text-xl font-semibold mb-4">Миссия</h2>
+                <p class="text-lg md:text-xl leading-relaxed">
+                    Мы стремимся не просто продавать автомобили, а помогать людям и компаниям находить решения для их
+                    задач. Для частных владельцев — это комфортные семейные поездки и удовольствие от управления. Для
+                    корпоративных клиентов — надёжный транспорт и удобные схемы финансирования, включая лизинг и
+                    специальные предложения.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 ">
+
+                <!-- Левое большое изображение -->
+                <div class="lg:col-span-2 md:w-[833px] rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
+                    <img src="../assets/5296487969768733493 1.png" alt="SOUEAST S08 в салоне"
+                        class="w-full h-full object-cover" />
+                </div>
+
+                <div class="flex w-[453px] flex-col justify-between">
+                    <!-- Правый верхний блок -->
+                    <div class="rounded-xl overflow-hidden shadow-lg aspect-video">
+                        <img src="../assets/5296487969768733499.png" alt="Чёрный SOUEAST в салоне"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Правый нижний блок -->
+                    <div class="rounded-xl w-[453px] overflow-hidden shadow-lg aspect-video">
+                        <img src="../assets/5296487969768733508.png" alt="Синий SOUEAST в салоне"
+                            class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <div class="container mx-auto px-6 py-12 bg-black text-white">
+            <div class=" mx-auto">
+
+                <!-- Заголовок -->
+                <h2 class="text-2xl md:text-3xl font-bold mb-8">Почему выбирают «Независимость»</h2>
+
+                <!-- Список преимуществ -->
+                <ul class="space-y-6">
+                    <!-- Пункт 1 -->
+                    <li class="flex items-start gap-3">
+                        <img src="../assets/aboutus/Vector-1.svg" alt="">
+                        <span class="text-lg leading-relaxed">
+                            Официальный статус — мы предлагаем автомобили только с заводской гарантией
+                        </span>
+                    </li>
+
+                    <!-- Пункт 2 -->
+                    <li class="flex items-start gap-3">
+                        <img src="../assets/aboutus/Vector-1.svg" alt="">
+
+                        <span class="text-lg leading-relaxed">
+                            Прозрачные условия — все цены и выгоды фиксируются в договоре, никаких скрытых платежей.
+                        </span>
+                    </li>
+
+                    <!-- Пункт 3 -->
+                    <li class="flex items-start gap-3">
+                        <img src="../assets/aboutus/Vector-1.svg" alt="">
+
+                        <span class="text-lg leading-relaxed">
+                            Комплекс услуг в одном месте — покупка, кредитование, трейд-ин, лизинг, страхование и
+                            сервис.
+                        </span>
+                    </li>
+
+                    <!-- Пункт 4 -->
+                    <li class="flex items-start gap-3">
+                        <img src="../assets/aboutus/Vector-1.svg" alt="">
+
+                        <span class="text-lg leading-relaxed">
+                            Индивидуальный подход — мы подбираем решения под конкретные задачи и бюджет клиента
+                        </span>
+                    </li>
+
+                    <!-- Пункт 5 -->
+                    <li class="flex items-start gap-3">
+                        <img src="../assets/aboutus/Vector-1.svg" alt="">
+
+                        <span class="text-lg leading-relaxed">
+                            Современный шоурум — комфортная атмосфера, где легко сравнить модели и пройти тест-драйв
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="container mx-auto px-6 py-12 bg-black text-white">
+            <div class=" mx-auto">
+
+                <!-- Заголовок "Наши клиенты" -->
+                <h2 class="text-xl font-semibold mb-4">Наши клиенты</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    Среди наших покупателей — и частные автолюбители, и корпоративные заказчики. Для бизнеса мы
+                    предлагаем готовые программы лизинга, оптимизированные под разные сферы: такси, доставка, малый и
+                    средний бизнес, корпоративные автопарки.
+                </p>
+
+                <!-- Заголовок "Больше, чем автосалон" -->
+                <h2 class="text-xl font-semibold mb-4">Больше, чем автосалон</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    «Независимость» — это команда, которая сопровождает клиента не только в момент покупки, но и на
+                    протяжении всего пути владения автомобилем. Мы обеспечиваем техническое обслуживание, используем
+                    только оригинальные запчасти и помогаем сохранить ваш автомобиль в идеальном состоянии.
+                </p>
+
+                <!-- Заголовок "Наши ценности" -->
+                <h2 class="text-xl font-semibold mb-4">Наши ценности</h2>
+                <ul class="list-disc list-inside text-lg leading-relaxed mb-6 space-y-2">
+                    <li>Надёжность — мы отвечаем за качество и всегда держим слово.</li>
+                    <li>Открытость — мы строим отношения с клиентами на доверии.</li>
+                    <li>Развитие — мы постоянно улучшаем сервис и расширяем возможности для клиентов.</li>
+                </ul>
+
+                <!-- Заключительный абзац -->
+                <p class="text-lg leading-relaxed">
+                    Мы стремимся сделать покупку и владение автомобилем SOUEAST максимально удобным, выгодным и
+                    комфортным. В автоцентре «Независимость» вы получаете больше, чем просто автомобиль — вы получаете
+                    уверенность в своём выборе.
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="bg-[#0a0a0a] text-white py-12">
+        <div class="container mx-auto px-4">
+
+            <!-- Логотип и слоган -->
+            <div class="flex items-center mb-12">
+                <img src="../assets/logo.svg" alt="SOUEAST Logo" class="w-64 h-auto">
+                <div class="ml-8 border-l border-gray-700 pl-8">
+                    <span class="text-white font-medium">Независимость</span>
+                </div>
+            </div>
+
+            <!-- Десктоп: три колонки -->
+            <div class="hidden md:flex justify-between gap-12 mb-12">
+                <!-- Колонка 1: Модели -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Модели</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-orange-500 hover:text-orange-400 transition duration-200">S09</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">S07</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">S06</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 2: Покупателям -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Покупателям</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Автомобили в
+                                наличии</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Онлайн-оценка</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-white transition duration-200">Спецпредложения</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Социальная
+                                программа</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Корпоративным
+                                клиентам</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Запись на
+                                тест-драйв</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 3: О сервисе -->
+                <div class="w-[180px]">
+                    <h3 class="text-lg font-semibold mb-6">О сервисе</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">История
+                                SOUEAST</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Экотехнологии</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Новости</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Мобильная версия: раскрывающиеся меню -->
+            <div class="md:hidden mt-8">
+                <div class="space-y-4">
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('models')">
+                            Модели
+                            <svg id="models-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="models-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S09</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S07</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">S06</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('buyers')">
+                            Покупателям
+                            <svg id="buyers-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="buyers-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Автомобили
+                                в наличии</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Онлайн-оценка</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Спецпредложения</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Социальная
+                                программа</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Корпоративным
+                                клиентам</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Запись на
+                                тест-драйв</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button
+                            class="w-full flex justify-between items-center text-left text-white font-medium text-lg p-4 bg-[#0a0a0a] border-b border-gray-700 focus:outline-none"
+                            onclick="toggleMenu('service')">
+                            О сервисе
+                            <svg id="service-arrow" class="w-5 h-5 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="service-content" class="hidden mt-2 space-y-2">
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">История
+                                SOUEAST</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Экотехнологии</a>
+                            <a href="#"
+                                class="block text-gray-400 hover:text-white transition duration-200 px-4 py-2">Новости</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Копирайт -->
+                <div class="text-gray-400  text-xs mt-8  pt-4">
+                    © 2025, ООО «ИМПЕРИЯ», ИНН 773065345<br>
+                    ОГРН 111774683794
+                </div>
+            </div>
+
+            <!-- Подпись (условия) -->
+            <div class="text-gray-400 text-[12px] leading-relaxed mb-8">
+                <div class="text-gray-400  text-xs mt-8  pt-4">
+                    © 2025, ООО «ИМПЕРИЯ», ИНН 773065345<br>
+                    ОГРН 111774683794
+                </div>
+                Производитель сохраняет за собой исключительное право в любое время вносить дополнения, изменения,
+                обновления в информацию о параметрах продукта, конфигурации, материалы, цвета и в другую информацию о
+                транспортном средстве без предварительного уведомления. Приобретение любой продукции бренда SOUEAST
+                осуществляется в соответствии с условиями индивидуального договора купли-продажи. Представленное
+                изображение, цвет, технические характеристики и комплектация автомобилей могут отличаться от
+                реализуемого. Упоминаемое оборудование может быть опциональным. Для получения подробной информации об
+                актуальных ценах на продукцию SOUEAST и наличии автомобилей обращайтесь к официальным дилерам. Не
+                является публичной офертой.
+            </div>
+
+            <div class="border-t border-gray-700 mb-8"></div>
+
+            <!-- Нижняя часть: Ссылки и соцсети -->
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-center space-y-6 md:space-y-0 ">
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-center md:text-left">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Политика
+                        конфиденциальности</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Cookies</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Контакты</a>
+                </div>
+            </div>
+
+            <div class=" mt-8"></div>
+
+
+        </div>
+    </footer>
+    <script src="../script/components/iterations/changeColors.js"></script>
+    <script src="../script/components/slider/CreditSlider.js"></script>
+
+
+</body>
+
+</html>
