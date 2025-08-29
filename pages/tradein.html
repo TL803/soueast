@@ -148,6 +148,237 @@
         </div>
     </header>
 
+
+    <main class="mb-[60px]">
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-[20px] md:text-[48px] font-medium mb-8">Trade-in</h2>
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+
+                <!-- ЛЕВАЯ ЧАСТЬ: Кредитный калькулятор -->
+                <div class="w-full  md:bg-[#111214] space-y-16 rounded-2xl md:p-6 shadow-2xl">
+
+                    <img class="w-full" src="../assets/Rectangle 77.png" alt="">
+
+                    <!-- Шаг 1: Выберите авто -->
+                    <div class="space-y-6">
+                        <h3 class="text-[14px] md:text-[18px]  font-medium text-white">Введите данные вашего авто </h3>
+                        <input type="tel" placeholder="Марка "
+                            class="w-full px-4 py-3 bg-[#111214] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FE7600]" />
+                        <input type="tel" placeholder="Модель"
+                            class="w-full px-4 py-3 bg-[#111214] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FE7600]" />
+                        <input type="tel" placeholder="Пробег"
+                            class="w-full px-4 py-3 bg-[#111214] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FE7600]" />
+                        <input type="tel" placeholder="Год"
+                            class="w-full px-4 py-3 bg-[#111214] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FE7600]" />
+
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-[14px] md:text-[18px]  font-medium text-white">Выберите новый авто </h3>
+
+
+                        <div class="relative">
+                            <select
+                                class="w-full bg-[#111214] border border-[#3c3c3e] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none">
+                                <option>Комплектация</option>
+                                <option>Model X</option>
+                                <option>Model Y</option>
+                                <option>Model Z</option>
+                            </select>
+                            <svg class="absolute right-3 top-3.5 w-5 h-5 text-gray-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <div class="relative">
+                            <select
+                                class="w-full bg-[#111214] border border-[#3c3c3e] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none">
+                                <option>Комплектация</option>
+                                <option>Model X</option>
+                                <option>Model Y</option>
+                                <option>Model Z</option>
+                            </select>
+                            <svg class="absolute right-3 top-3.5 w-5 h-5 text-gray-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Шаг 4: Контакты -->
+                    <div class="mt-8 space-y-4">
+                        <h3 class="text-[14px] md:text-[18px]  font-medium text-white">Введите ваши контакты</h3>
+                        <input type="text" placeholder="ФИО"
+                            class="w-full px-4 py-3 bg-[#111214] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FE7600]" />
+                        <input type="tel" placeholder="Телефон"
+                            class="w-full px-4 py-3 bg-[#111214] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FE7600]" />
+                        <div class="mt-2 flex items-center gap-2">
+                            <input class="custom-checkbox-input w-4 h-4" checked type="checkbox" id="agree" />
+                            <label for="agree" class="text-xs text-gray-400">
+                                Согласен с &nbsp;<a href="#" class="text-[#FE7600] hover:underline">политикой обработки
+                                    персональных
+                                    данных</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка -->
+                    <button
+                        class="w-full py-3 mt-8 bg-[#FE7600] text-black font-bold rounded-lg hover:bg-[#e56c00] transition duration-200">
+                        Рассчитать кредит
+                    </button>
+                </div>
+
+
+
+
+                <!-- ПРАВАЯ ЧАСТЬ: Машина, цена, характеристики -->
+                <div class="w-full  space-y-14">
+
+                    <div
+                        class="relative rounded-xl h-[300px] md:h-[624px] overflow-hidden shadow-2xl bg-[#111214] flex items-center justify-center">
+                        <div
+                            class="absolute top-0 left-8 text-sm bg-[#F2892E80] rounded-b-[8px] p-1 text-white font-medium">
+                            Скидка до 860 000 ₽
+                        </div>
+                        <img id="car-image" src="" alt="S09 Comfort Plus" class="w-full  h-full object-cover" />
+                    </div>
+
+                    <!-- Название модели -->
+                    <h1 class="text-2xl md:text-4xl font-bold text-white">S09 Comfort Plus</h1>
+
+                    <!-- Выбор цвета -->
+                    <div class="flex gap-3" id="color-selector">
+                    </div>
+
+                    <!-- Характеристики -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                        <div class="flex items-center justify-center gap-2">
+                            <img src="../assets/auto/speed.svg" alt="Макс. скорость" class="w-6 opacity-80" />
+                            <div>
+                                <p class="text-xs text-gray-400">Макс. Скорость</p>
+                                <p class="font-medium text-sm">210 км/ч</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="../assets/auto/ic_timer_48px.svg" alt="Разгон" class="w-6 opacity-80" />
+                            <div>
+                                <p class="text-xs text-gray-400">Разгон до 100 км</p>
+                                <p class="font-medium text-sm">7.9 сек.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="../assets/auto/ic_local_gas_station_48px.svg" alt="Расход"
+                                class="w-6 opacity-80" />
+                            <div>
+                                <p class="text-xs text-gray-400">Расход</p>
+                                <p class="font-medium text-sm">9.9 л/100 км</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="../assets/auto/ic_flash_on_48px.svg" alt="Мощность" class="w-6 opacity-80" />
+                            <div>
+                                <p class="text-xs text-gray-400">Мощность</p>
+                                <p class="font-medium text-sm">210 л.с.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Промо-бейджи -->
+                    <div class="flex gap-[10px] flex-wrap mt-4 items-center ">
+                        <div
+                            class="px-3 py-1.5 w-max rounded-lg bg-[#FE7600CC] text-black text-xs md:text-sm font-medium">
+                            500 000 ₽ выгоды при покупке в кредит
+                        </div>
+                        <div
+                            class="px-3 py-1.5 w-max rounded-lg bg-[#FE7600CC] text-black text-xs md:text-sm font-medium">
+                            350 000 ₽ выгода по трейд-ин
+                        </div>
+                        <div
+                            class="px-3 py-1.5 w-max rounded-lg bg-[#FE7600CC] text-black text-xs md:text-sm font-medium">
+                            Кредит от 0.01%
+                        </div>
+                    </div>
+
+                    <!-- Цена -->
+                    <div class="space-y-0 md:space-y-[10px] mt-6 ">
+                        <p class="text-sm md:text-[20px] line-through text-gray-500">1 408 000 ₽</p>
+                        <p class="text-2xl md:text-[40px] font-medium text-white">от 552 000 ₽</p>
+                        <p class="text-xs md:text-[16px] font-medium text-gray-300">В кредит от 3 333₽/мес</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+  <div class="container mx-auto pt-6 pb-4.5 mb-[30px]">
+  <div class="flex flex-col md:flex-row gap-8 mx-auto">
+    <!-- Левая карточка -->
+    <div class="bg-[#111214] text-white p-6 rounded-xl shadow-lg flex-1 min-w-0">
+      <h3 class="text-xl font-semibold mb-5">Преимущества Trade-in</h3>
+      <ul class="space-y-3 text-sm leading-relaxed">
+        <li>— Честная оценка: профессиональная диагностика<br>и прозрачная цена.</li>
+        <li>— Выгода: зачисляем стоимость вашего авто в счёт первого<br>взноса или скидки.</li>
+        <li>— Без хлопот: не нужно размещать объявления, встречаться<br>с покупателями и оформлять бумаги.</li>
+        <li>— Безопасно: юридическая чистота сделки и полный пакет<br>документов.</li>
+      </ul>
+    </div>
+
+    <!-- Правая карточка -->
+    <div class="bg-[#111214] text-white p-6 rounded-xl shadow-lg flex-1 min-w-0">
+      <h3 class="text-xl font-semibold mb-5">Необходимые документы</h3>
+      <ul class="space-y-3 text-sm leading-relaxed">
+        <li>— Паспорт транспортного средства (ПТС)</li>
+        <li>— Свидетельство о регистрации авто (СТС)</li>
+        <li>— Ваш паспорт гражданина РФ</li>
+        <li>— Нотариальная доверенность, если автомобиль<br>зарегистрирован на другое лицо</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+        <div class="relative w-full mx-auto container">
+            <div class="h-[506px] md:h-[360px] change-bg-size max-sm:rounded-[12px] max-sm:mx-auto
+              rounded-xl shadow-lg overflow-hidden relative bg-cover" style=" background-position: center">
+
+                <div class="absolute inset-0 flex items-center justify-center z-0">
+                    <div class="logo opacity-20"></div>
+                </div>
+
+                <div class=" z-10 
+                absolute bottom-0 left-0 max-sm:p-6 
+                p-8 md:p-12 
+                text-white">
+                    <h2 class="text-[16px]  md:text-3xl font-bold max-sm:mb-3 mb-4">
+                        Выгода до 350 000 ₽
+                    </h2>
+                    <p class="text-[12px] md:text-[16px]  text-white max-sm:mb-5 mb-6 leading-relaxed">
+                        Обновите свой автомобиль на выгодных условиях! При покупке нового SOUEAST вы можете сэкономить
+                        до 350 000 ₽ и воспользоваться программой трейд-ин: сдавайте свой старый автомобиль, получайте
+                        честную оценку
+                        и зачёт его стоимости в покупку нового. Минимум хлопот — максимум выгоды!
+                    </p>
+                    <a href="#"
+                        class="text-[15px] px-6 py-3
+                inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold md:py-3 md:px-8 rounded-lg transition duration-300 text-center">
+                        Получить оценку своего авто
+                    </a>
+                </div>
+
+                <div class="absolute top-0 
+                right-[30px]  md:right-[100px] 
+                text-[12px] max-sm:px-3 max-sm:py-1 
+                bg-orange-500 text-black text-sm font-medium px-4 py-2 rounded-t-none rounded-b-md">
+                    Trade-in
+                </div>
+            </div>
+        </div>
+    </main>
+
+
     <footer class="bg-[#0a0a0a] text-white py-12">
         <div class="container mx-auto px-4">
 
@@ -312,6 +543,7 @@
                     <a href="#" class="text-gray-400 hover:text-white transition duration-200">Контакты</a>
                 </div>
             </div>
+
 
             <div class=" mt-8"></div>
 

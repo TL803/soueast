@@ -8,11 +8,74 @@
 
 
 
+
+
+.custom-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.custom-checkbox-input+label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 35px;
+    min-height: 25px;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Кастомный чекбокс (рамка) */
+.custom-checkbox-input+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Галочка — SVG */
+.custom-checkbox-input+label::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background: url('../assets/checkMark.svg') no-repeat center center;
+    background-size: 18px 18px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+/* Состояние checked */
+.custom-checkbox-input:checked+label::before {
+    border: 2px solid #f97316;
+    background-color: #f97316;
+}
+
+.custom-checkbox-input:checked+label::after {
+    opacity: 1;
+}
+
 @media (max-width: 1440px) {
     .change-bg-size {
         background-image: url('../assets/Frame 365.png');
     }
-        .container {
+
+    .container {
         width: 355px !important;
     }
 }
