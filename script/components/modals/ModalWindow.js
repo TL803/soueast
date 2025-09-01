@@ -17,9 +17,9 @@ export class ModalWindow {
       background = backgroundImage;
     }
     
-    const bgStyle = background 
-      ? `background-image: url('${background}'); background-position: top;` 
-      : `background: linear-gradient(to bottom, #191919 0%, #24353E 50%, #000000 100%);`;
+const bgStyle = background 
+  ? `background-image: url('${background}'); background-position: 100% center; background-size: cover;` 
+  : `background: #170D08;`;
 
     this.element = DomUtils.createElement('div', `
       relative 
@@ -88,7 +88,7 @@ export class ModalWindow {
     });
 
     const contentWrapper = DomUtils.createElement('div', `
-      relative z-1 text-white
+      relative z-1 text-white  h-full flex flex-col justify-center
     `);
     
     if (template) {

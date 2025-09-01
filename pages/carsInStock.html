@@ -148,7 +148,72 @@
         </div>
     </header>
 
-    <main class="mb-[40px]">
+    <main class="mb-[40px] mt-[40px]">
+
+        <div class="container mx-auto rounded-lg p-6 bg-[#161616]">
+            <div class=" mb-[20px]  flex flex-col space-y-[20px] md: md:flex-row justify-between items-start  mx-auto">
+                <!-- Верхняя часть: Заголовки и выбор -->
+                <div class="w-full">
+                    <p class="mb-[20px]">Выберите авто</p>
+                    <div class="flex flex-col md:flex-row gap-[18px]">
+                        <div class="relative md:w-[337px]">
+                            <select
+                                class="w-full bg-[#111214] border border-[#3c3c3e] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none">
+                                <option>Модель</option>
+                                <option>Model X</option>
+                                <option>Model Y</option>
+                                <option>Model Z</option>
+                            </select>
+                            <svg class="absolute right-3 top-3.5 w-5 h-5 text-gray-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                        <div class="relative md:w-[337px]">
+                            <select
+                                class="w-full bg-[#111214] border border-[#3c3c3e] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none">
+                                <option>Комплектация</option>
+                                <option>Model X</option>
+                                <option>Model Y</option>
+                                <option>Model Z</option>
+                            </select>
+                            <svg class="absolute right-3 top-3.5 w-5 h-5 text-gray-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="mb-[20px]">Выберите цвет </p>
+
+                    <div class="flex space-x-3">
+                        <button
+                            class="w-8 h-8 bg-gray-300 rounded-md border border-gray-600 hover:bg-gray-400 transition-colors"></button>
+                        <button
+                            class="w-8 h-8 bg-gray-800 rounded-md border border-gray-600 hover:bg-gray-700 transition-colors"></button>
+                        <button
+                            class="w-8 h-8 bg-gray-700 rounded-md border border-gray-600 hover:bg-gray-600 transition-colors"></button>
+                        <button
+                            class="w-8 h-8 bg-blue-700 rounded-md border border-gray-600 hover:bg-blue-600 transition-colors"></button>
+                        <button
+                            class="w-8 h-8 bg-gray-500 rounded-md border border-gray-600 hover:bg-gray-400 transition-colors"></button>
+                        <button
+                            class="w-8 h-8 bg-gray-200 rounded-md border border-gray-600 hover:bg-gray-300 transition-colors"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full">
+                <button
+                    class="w-full bg-orange-500 hover:bg-orange-600 text-black font-medium py-4 px-6 rounded-lg transition duration-200">
+                    Показать
+                </button>
+            </div>
+        </div>
+        </div>
         <section>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
                 <h2 class="text-[24px] md:text-[48px] font-medium mt-[35px] mb-[52px]">Автомобили в наличии</h2>

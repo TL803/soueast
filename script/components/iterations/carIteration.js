@@ -1,4 +1,4 @@
-// === Данные об автомобилях ===
+// === Данные об автомобилях с добавленным статусом ===
 const cars = [
     {
         name: "S07 Premium 4WD",
@@ -7,7 +7,8 @@ const cars = [
         price: "2 809 000 ₽",
         credit: "В кредит от 3 333 ₽/мес",
         discount: "Скидка до 860 000 ₽",
-        image: "../assets/carInCard.png"
+        image: "../assets/carInCard.png",
+        status: "В наличии"
     },
     {
         name: "S09 Comfort Plus",
@@ -16,7 +17,8 @@ const cars = [
         price: "2 499 000 ₽",
         credit: "В кредит от 2 999 ₽/мес",
         discount: "Скидка до 600 000 ₽",
-        image: "../assets/carInCard.png"
+        image: "../assets/carInCard.png",
+        status: "Забронировано"
     },
     {
         name: "S07 Comfort Plus",
@@ -25,7 +27,8 @@ const cars = [
         price: "2 809 000 ₽",
         credit: "В кредит от 3 333 ₽/мес",
         discount: "Скидка до 860 000 ₽",
-        image: "../assets/carInCard.png"
+        image: "../assets/carInCard.png",
+        status: "В наличии"
     },
     {
         name: "S05 City",
@@ -34,7 +37,8 @@ const cars = [
         price: "1 800 000 ₽",
         credit: "В кредит от 2 100 ₽/мес",
         discount: "Скидка до 300 000 ₽",
-        image: "../assets/carInCard.png"
+        image: "../assets/carInCard.png",
+        status: "В пути"
     },
     {
         name: "S10 Pro",
@@ -43,7 +47,8 @@ const cars = [
         price: "3 200 000 ₽",
         credit: "В кредит от 3 800 ₽/мес",
         discount: "Скидка до 750 000 ₽",
-        image: "../assets/carInCard.png"
+        image: "../assets/carInCard.png",
+        status: "В наличии"
     },
     {
         name: "S10 Pro",
@@ -52,11 +57,21 @@ const cars = [
         price: "3 200 000 ₽",
         credit: "В кредит от 3 800 ₽/мес",
         discount: "Скидка до 750 000 ₽",
-        image: "../assets/carInCard.png"
+        image: "../assets/carInCard.png",
+        status: "Забронировано"
     }
 ];
 
-// === Конфигурация карточки (подходит под твой макет) ===
+// === Цвета для статусов (CSS HEX) ===
+const STATUS_COLOR_MAP = {
+    'В наличии': '#10B981',     // зелёный
+    'Забронировано': '#EF4444', // красный
+    'В пути': '#F97316',        // оранжевый
+    'Ожидается': '#F59E0B',     // жёлтый
+    'default': '#6B7280'        // серый (по умолчанию)
+};
+
+// === Конфигурация карточки ===
 const CAR_CARD_CONFIG = {
     linkHref: './auto.html',
     linkClass: 'block card-wrapper',
@@ -82,10 +97,11 @@ const CAR_CARD_CONFIG = {
         'text-[16px] sm:text-[18px] md:text-[20px] font-medium ' +
         'py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-4 rounded-lg ' +
         'transition duration-200',
-    buttonText: 'Подробнее'
+    buttonText: 'Подробнее',
+    statusClass: 'flex items-center text-[14px] sm:text-[15px] md:text-[16px] ml-auto font-medium'
 };
 
-// === Создание карточки ===
+// === Создание карточки автомобиля ===
 function createCarCard(car, config = CAR_CARD_CONFIG) {
     const {
         linkHref,
@@ -102,8 +118,12 @@ function createCarCard(car, config = CAR_CARD_CONFIG) {
         priceClass,
         creditClass,
         buttonClass,
-        buttonText
+        buttonText,
+        statusClass
     } = config;
+
+    // Получаем цвет для статуса
+    const statusColor = STATUS_COLOR_MAP[car.status] || STATUS_COLOR_MAP.default;
 
     const link = document.createElement('a');
     link.href = linkHref;
@@ -119,14 +139,28 @@ function createCarCard(car, config = CAR_CARD_CONFIG) {
             </div>
             <div class="${contentPadding} ${contentSpacing}">
                 <h3 class="${titleClass}">${car.name}</h3>
-                <p class="${typeClass}">${car.type}</p>
+                
+                <!-- Тип кузова и статус в одной строке -->
+                <div class="flex items-center justify-between">
+                    <p class="${typeClass}">${car.type}</p>
+                    <div class="${statusClass}">
+                        <span 
+                            class="w-2 h-2 rounded-full mr-1" 
+                            style="background-color: ${statusColor};">
+                        </span>
+                        <span style="color: ${statusColor};">${car.status}</span>
+                    </div>
+                </div>
+                
                 <p class="${specsClass}">
                     ${car.specs}
                 </p>
+                
                 <div class="${priceWrapper}">
                     <p class="${priceClass}">${car.price}</p>
                     <p class="${creditClass}">${car.credit}</p>
                 </div>
+                
                 <button class="${buttonClass}">
                     ${buttonText}
                 </button>
@@ -147,7 +181,7 @@ function renderCars(data, selector = '[data-container="cars"]') {
     }
 
     containers.forEach(container => {
-        // Очистка контейнера (если нужно)
+        // При необходимости очистить контейнер
         // container.innerHTML = '';
 
         data.forEach(car => {

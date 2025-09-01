@@ -1,5 +1,5 @@
-import { OrderForLeasingModal } from "../modals/templates/OrderForLeasing.js"
-import { OrderCarTemplate } from "../modals/templates/OrderCarTemplate.js"
+import { CashBack } from "./templates/CashBack.js"
+import { RequestАСall } from "./templates/RequestАСall.js"
 import { OrderSelectedCar } from "../modals/templates/OrderSelectedCar.js"
 import { OrderTradeIn } from "../modals/templates/OrderTradeIn.js"
 import { Questions } from "../modals/templates/Questions.js"
@@ -23,9 +23,9 @@ export class PopupFactory {
   static getModalConfig(type) {
     switch (type) {
       case 'order-car':
-        return OrderCarTemplate;
+        return RequestАСall;
       case 'leasing':
-        return OrderForLeasingModal;
+        return CashBack;
       case 'order-selected-car':
         return OrderSelectedCar;
       case 'trade-in':

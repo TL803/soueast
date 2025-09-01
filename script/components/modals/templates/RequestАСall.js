@@ -1,71 +1,77 @@
-export class OrderSelectedCar {
+export class RequestАСall {
   static getTemplate() {
     /* html */
     return `
-<div class="w-full mx-auto flex flex-col md:flex-row items-center justify-between p-8 gap-8 bg-transparent">
-  <!-- Левая часть: форма -->
-  <div class="flex-1 space-y-6 text-white">
-    <h2 class="text-2xl md:text-3xl font-bold text-center">Получите персональные условия по кредиту</h2>
-    
-    <p class="text-sm md:text-base text-center text-gray-300 leading-relaxed">
-      Оставьте заявку, и мы свяжемся с вами в ближайшее время, чтобы подобрать идеальный автомобиль именно для вас!
-    </p>
+      <div class="w-[685px] space-y-8 bg-transparent rounded-xl overflow-hidden flex justify-between">
+        <div class="text-white space-y-8 p-[20px] ">
+            <p class="text-[20px] text-white text-center leading-relaxed">
+              Оставьте свои контакты — и наш менеджер перезвонит Вам в ближайшее время, чтобы ответить на все вопросы
+            </p>
 
-    <form id="credit-application-form" class="space-y-6 w-full">
-      <div>
-        <input 
-          type="text" 
-          name="full_name" 
-          required 
-          class="w-full h-[60px] px-6 bg-[#F8F8F852] border border-[#F8F8F852] rounded-xl text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-60 focus:border-red-400 transition"
-          placeholder="ФИО"
-        >
-        <div class="error-message text-red-300 text-sm mt-1 hidden"></div>
+          <form id="order-car-form" data-modal-form="order-car" class="space-y-10 mt-2 w-full">
+            <div>
+              <input 
+                type="text" 
+                name="full_name" 
+                required 
+                class="w-full h-[60px] px-6 
+                       bg-[#F8F8F852] border border-[#F8F8F852] rounded-xl 
+                       text-white placeholder-white placeholder-opacity-70 
+                       text-[16px] font-normal 
+                       focus:outline-none 
+                       focus:ring-2 focus:ring-red-400 focus:ring-opacity-60 
+                       focus:border-red-400"
+                placeholder="ФИО"
+                minlength="2"
+                maxlength="100"
+              >
+              <div class="error-message text-red-300 text-sm mt-1 hidden"></div>
+            </div>
+
+            <div>
+              <input 
+                type="tel" 
+                name="phone" 
+                required 
+                class="w-full h-[60px] px-6 
+                       bg-[#F8F8F852] border border-[#F8F8F852] rounded-xl
+                       text-white placeholder-white placeholder-opacity-70 
+                       text-[16px] font-normal 
+                       focus:outline-none 
+                       focus:ring-2 focus:ring-red-400 focus:ring-opacity-60 
+                       focus:border-red-400"
+                placeholder="Ваш телефон"
+              >
+              <div class="error-message text-red-300 text-sm mt-1 hidden"></div>
+            </div>
+             <div class="mt-2 flex items-center gap-2">
+                <input class="custom-checkbox-input w-4 h-4" checked type="checkbox" id="agree" />
+                <label for="agree" class="text-xs text-gray-400">
+                    Согласен с &nbsp;<a href="./privacyPolicy.html" class="text-[#FE7600] hover:underline">политикой обработки
+                        персональных
+                        данных</a>
+                </label>
+            </div>
+          </form>
+        </div>
       </div>
 
-      <div>
-        <input 
-          type="tel" 
-          name="phone" 
-          required 
-          class="w-full h-[60px] px-6 bg-[#F8F8F852] border border-[#F8F8F852] rounded-xl text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-60 focus:border-red-400 transition"
-          placeholder="Ваш телефон"
+      <div class="w-full px-8 mt-6">
+        <button 
+          type="submit"
+          form="order-car-form"
+          class="w-full h-[84px] 
+                 bg-[#FE7600] hover:bg-red-700 
+                 text-black text-[24px] font-semibold 
+                 rounded-2xl
+                 transition duration-200 
+                 transform hover:scale-[1.01] 
+                 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          id="submit-order-car"
         >
-        <div class="error-message text-red-300 text-sm mt-1 hidden"></div>
+          Оставить заявку на звонок! 
+        </button>
       </div>
-
-      <div class="flex items-center gap-2">
-        <input 
-          type="checkbox" 
-          id="agree" 
-          checked 
-          class="custom-checkbox-input w-4 h-4 text-red-400 border-gray-600 rounded"
-        >
-        <label for="agree" class="text-xs text-gray-400">
-          Согласен с <a href="./privacyPolicy.html" class="text-[#FE7600] hover:underline">политикой обработки персональных данных</a>
-        </label>
-      </div>
-
-      <button 
-        type="submit" 
-        form="credit-application-form"
-        class="w-full h-[84px] bg-[#FE7600] hover:bg-orange-600 text-black text-[24px] font-semibold rounded-2xl transition duration-200 transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-        id="submit-credit-application"
-      >
-        Получить предложение!
-      </button>
-    </form>
-  </div>
-
-  <!-- Правая часть: изображение автомобиля -->
-  <div class="flex-1 flex justify-center">
-    <img 
-      src="../assets/modals/S09_preview 1.png" 
-      alt="Автомобиль Tanglun EQ2" 
-      class="w-full  object-contain rounded-xl shadow-lg"
-    />
-  </div>
-</div>
     `;
   }
 
