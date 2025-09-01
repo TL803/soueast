@@ -1,8 +1,6 @@
 import { CashBack } from "./templates/CashBack.js"
 import { RequestАСall } from "./templates/RequestАСall.js"
 import { OrderSelectedCar } from "../modals/templates/OrderSelectedCar.js"
-import { OrderTradeIn } from "../modals/templates/OrderTradeIn.js"
-import { Questions } from "../modals/templates/Questions.js"
 export class PopupFactory {
   static createModal(modalType) {
     const modalConfig = this.getModalConfig(modalType);
@@ -28,10 +26,6 @@ export class PopupFactory {
         return CashBack;
       case 'order-selected-car':
         return OrderSelectedCar;
-      case 'trade-in':
-        return OrderTradeIn;
-      case 'questions':
-        return Questions;
       default:
         return null;
     }

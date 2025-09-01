@@ -61,29 +61,28 @@
 </head>
 
 <body class="font-sans bg-black text-white">
-    <header class="w-full">
+ <header class="sticky top-0 z-50">
         <!-- Верхняя строка (только десктоп) -->
-        <div class="header-top py-[20px] md:flex hidden">
+        <div class="hidden md:flex bg-black py-5">
             <div class="container mx-auto flex justify-between items-center px-4">
-                <div class="flex items-center space-x-[16px]">
-                    <a href="./index.html"><img src="../assets/logo.svg" alt="Логотип"></a>
+                <div class="flex items-center space-x-4">
+                    <span class="text-xl font-bold text-white">SOUEAST</span>
                     <span class="text-sm text-white">| НЕЗАВИСИМОСТЬ</span>
                 </div>
                 <div class="flex items-center space-x-6 text-sm text-white">
-                    <div class="flex items-center space-x-[5px]">
-                        <img src="../assets/place.svg" alt="Местоположение" class="h-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-orange-500"></i>
                         <span>г. Москва, Береговой проезд, 4/6, стр. 3</span>
                     </div>
-                    <div class="flex items-center space-x-[5px]">
-                        <img src="../assets/phone.svg" alt="Телефон" class="h-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone text-orange-500"></i>
                         <span>+7 (499) 229-89-99</span>
                     </div>
-                    <div class="flex items-center space-x-[5px]">
-                        <img src="../assets/time.svg" alt="Время работы" class="h-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-clock text-orange-500"></i>
                         <span>пн-вс, 9:00–21:00</span>
                     </div>
-                    <button
-                        class="bg-orange-500 hover:bg-orange-600 text-black px-[12px] py-[6px] rounded text-sm transition duration-200">
+                    <button class="bg-orange-500 hover:bg-orange-600 text-black px-3 py-2 rounded text-sm transition duration-200">
                         Заказать звонок
                     </button>
                 </div>
@@ -91,62 +90,96 @@
         </div>
 
         <!-- Разделительная линия (десктоп) -->
-        <div class="w-full h-[1px] bg-[#4c4c4c] md:block hidden"></div>
+        <div class="hidden md:block w-full h-px bg-gray-700"></div>
 
         <!-- Нижняя строка меню (десктоп) -->
-        <div class="header-bottom sticky top-0 z-50 bg-black md:flex hidden">
+        <div class="hidden md:flex bg-black shadow-lg">
             <div class="container mx-auto flex justify-between items-center px-4 py-4">
                 <div class="flex space-x-6">
-                    <a href="#"
-                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S09</a>
-                    <a href="#"
-                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S07</a>
-                    <a href="#"
-                        class="text-white hover:text-orange-500 text-[14px] font-medium transition duration-200">S06</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm font-medium transition duration-200">S09</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm font-medium transition duration-200">S07</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm font-medium transition duration-200">S06</a>
                 </div>
                 <nav class="flex space-x-8">
-                    <a href="./carsInStock.html"
-                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Автомобили
-                        в наличии</a>
-                    <a href="./tradein.html"
-                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Trade-in</a>
-                    <a href="./loan.html"
-                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Кредит</a>
-                    <a href="./specialization.html"
-                        class="text-white hover:text-orange-500 text-[14px] font-regular transition duration-200">Спецпредложения</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm transition duration-200">Автомобили в наличии</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm transition duration-200">Trade-in</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm transition duration-200">Кредит</a>
+                    <a href="#" class="text-white hover:text-orange-500 text-sm transition duration-200">Спецпредложения</a>
                 </nav>
             </div>
         </div>
 
-        <div class="md:hidden flex justify-between items-center p-4 bg-black text-white">
-            <img src="../assets/logo.svg" alt="Логотип">
+        <!-- Мобильная версия хедера -->
+        <div class="md:hidden flex justify-between items-center p-4 bg-black text-white shadow-lg">
+            <span class="text-xl font-bold">SOUEAST</span>
             <div class="flex items-center space-x-4">
                 <a href="tel:+74992298999" class="text-orange-500 hover:text-orange-400 transition">
-                    <img src="../assets/phone.svg" alt="Телефон" class="w-6 h-6">
+                    <i class="fas fa-phone text-xl"></i>
                 </a>
                 <button id="menuToggle" class="text-white focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-
-        <div id="mobileMenu" class="md:hidden bg-black text-white p-4 hidden">
-            <div class="flex flex-col space-y-4 text-lg">
-                <a href="#" class="hover:text-orange-500 transition">S09</a>
-                <a href="#" class="hover:text-orange-500 transition">S07</a>
-                <a href="#" class="hover:text-orange-500 transition">S06</a>
-                <a href="#" class="hover:text-orange-500 transition">Автомобили в наличии</a>
-                <a href="#" class="hover:text-orange-500 transition">Trade-in</a>
-                <a href="#" class="hover:text-orange-500 transition">Кредит</a>
-                <a href="#" class="hover:text-orange-500 transition">Спецпредложения</a>
-            </div>
-        </div>
     </header>
+    
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+            
+            let isMenuOpen = false;
+            
+            // Функция открытия меню
+            function openMenu() {
+                mobileMenuContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenuPanel.classList.remove('translate-x-full');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+                isMenuOpen = true;
+            }
+            
+            // Функция закрытия меню
+            function closeMenuFunc() {
+                mobileMenuPanel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    mobileMenuContainer.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+                isMenuOpen = false;
+            }
+            
+            // Обработчик клика по бургеру
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (isMenuOpen) {
+                    closeMenuFunc();
+                } else {
+                    openMenu();
+                }
+            });
+            
+            // Обработчик клика по кнопке закрытия
+            closeMenu.addEventListener('click', closeMenuFunc);
+            
+            // Обработчик клика по затемненной области
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    closeMenuFunc();
+                }
+            });
+            
+            // Закрытие меню при клике на ссылки внутри меню
+            const menuLinks = mobileMenuPanel.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', closeMenuFunc);
+            });
+        });
+    </script>
 
 
     <main class="mb-[60px]">
