@@ -17,34 +17,37 @@ export class ModalWindow {
       background = backgroundImage;
     }
     
-const bgStyle = background 
-  ? `background-image: url('${background}'); background-position: 100% center; background-size: cover;` 
-  : `background: #170D08;`;
+    const bgStyle = background 
+      ? `background-image: url('${background}'); background-position: 100% center; background-size: cover;` 
+      : `background: #170D08;`;
 
     this.element = DomUtils.createElement('div', `
       relative 
-      w-full max-w-[1440px]
-      h-[800px] 
+      w-full max-w-[95vw] md:max-w-[1440px]
+      h-[600px] md:h-[800px] 
+      max-h-[90vh] md:max-h-none
       overflow-y-auto
-      rounded-xl 
+      rounded-lg md:rounded-xl 
       shadow-2xl
-      p-6
+      p-4 md:p-6
       bg-cover bg-center bg-no-repeat
       before:content-[''] 
       before:absolute 
       before:inset-0 
       before:bg-black 
       before:bg-opacity-70 
-      before:rounded-xl 
+      before:rounded-lg md:before:rounded-xl 
       before:-z-10
       bg-bottom
+      mx-auto
+      mt-4 md:mt-0
     `, {
       style: bgStyle
     });
 
     const closeBtn = DomUtils.createElement('button', `
-      absolute top-4 right-4
-      w-12 h-12
+      absolute top-2 right-2 md:top-4 md:right-4
+      w-10 h-10 md:w-12 md:h-12
       flex items-center justify-center
       rounded-full
       bg-transparent
@@ -57,12 +60,12 @@ const bgStyle = background
       focus:ring-2 focus:ring-white focus:ring-opacity-30
       cursor-pointer
 
-      /* Увеличиваем кликабельную зону через псевдоэлемент */
+      /* Увеличиваем кликабельную зону */
       after:content-['']
       after:absolute
-      after:inset-[-16px]
-      after:w-[60px]
-      after:h-[60px]
+      after:inset-[-12px] md:after:inset-[-16px]
+      after:w-[46px] md:after:w-[60px]
+      after:h-[46px] md:after:h-[60px]
       after:-z-10
     `, { 
       'aria-label': 'Закрыть' 
@@ -71,12 +74,14 @@ const bgStyle = background
     const closeIcon = DomUtils.createElement('img', '', {
       src: '../assets/cross.svg',
       alt: 'Закрыть',
-      width: '30',
-      height: '30',
-      zIndex: 20
+      width: '24',
+      height: '24',
+      style: 'pointer-events: none; z-index: 20;'
     });
 
-    closeIcon.style.pointerEvents = 'none';
+    // Адаптивные размеры для иконки
+    closeIcon.classList.add('w-6', 'h-6', 'md:w-8', 'md:h-8');
+    
     closeBtn.appendChild(closeIcon);
 
     // Обработчик закрытия
@@ -88,7 +93,9 @@ const bgStyle = background
     });
 
     const contentWrapper = DomUtils.createElement('div', `
-      relative z-1 text-white  h-full flex flex-col justify-center
+      relative z-1 text-white h-full flex flex-col justify-center
+      px-2 md:px-0
+      overflow-auto
     `);
     
     if (template) {

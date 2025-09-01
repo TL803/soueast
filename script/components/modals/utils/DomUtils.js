@@ -1,4 +1,3 @@
-// /script/modals/utils/DomUtils.js
 export class DomUtils {
   static createElement(tag, className = '', attrs = {}) {
     const el = document.createElement(tag);
@@ -30,7 +29,21 @@ export class DomUtils {
   }
 
   static focusFirstInput(container) {
-    const firstInput = container.querySelector('input, button, select, textarea');
-    firstInput?.focus();
+    if (!container) {
+      console.warn('Container is undefined in focusFirstInput');
+      return;
+    }
+    
+    // Даем время на рендеринг контента
+    setTimeout(() => {
+      try {
+        const firstInput = container.querySelector('input, button, select, textarea');
+        if (firstInput) {
+          firstInput.focus();
+        }
+      } catch (error) {
+        console.warn('Could not focus first input:', error);
+      }
+    }, 100);
   }
 }

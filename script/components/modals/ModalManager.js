@@ -57,7 +57,9 @@ export class ModalManager {
     this.cleanupEscape = DomUtils.onEscape(() => this.close());
   
     backdrop.show();
-    DomUtils.focusFirstInput(window.content);
+    
+    // ИСПРАВЛЕНО: передаем window.element вместо window.content
+    DomUtils.focusFirstInput(window.element);
   }
 
   close() {
